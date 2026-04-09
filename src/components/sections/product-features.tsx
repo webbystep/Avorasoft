@@ -1,4 +1,4 @@
-import { Handshake, BarChart3, CalendarDays, ClipboardList } from 'lucide-react';
+import { BarChart3, CalendarDays, ClipboardList, Handshake } from 'lucide-react';
 import Image from 'next/image';
 
 import { cn } from '@/lib/utils';

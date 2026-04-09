@@ -1,5 +1,4 @@
 import { Verified } from 'lucide-react';
-import Image from 'next/image';
 
 import { Meteors } from '@/components/magicui/meteors';
 
