@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { MovingBorder } from '@/components/ui/moving-border';
+import { cn } from '@/lib/utils';
 
 export function Hero() {
   return (
