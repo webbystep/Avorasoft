@@ -12,12 +12,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 
 import { Diamonds } from '@/components/icons/diamonds';
 import Logo from '@/components/layout/logo';
 import { Button } from '@/components/ui/button';
-import { EXTERNAL_LINKS } from '@/constants/external-links';
 import { cn } from '@/lib/utils';
 
 const FEATURES = [
@@ -169,40 +167,21 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Social and Status Section */}
+        {/* Legal Links and Status Section */}
         <div className="flex flex-col justify-between border-x border-b md:flex-row">
-          <div className="bordered-div-padding flex items-center space-x-3">
+          <div className="bordered-div-padding flex items-center space-x-6 text-sm">
             <Link
-              href={EXTERNAL_LINKS.DISCORD}
-              className="px-3 py-2.5 transition-opacity hover:opacity-80"
-              target="_blank"
-              aria-label="Discord"
+              href="/privacy-policy"
+              className="transition-opacity hover:opacity-80"
             >
-              <FaDiscord className="size-5" />
+              Adatvédelmi irányelvek
             </Link>
+            <span className="text-border">•</span>
             <Link
-              href={EXTERNAL_LINKS.GITHUB}
-              className="px-3 py-2.5 transition-opacity hover:opacity-80"
-              target="_blank"
-              aria-label="GitHub"
+              href="/terms-of-service"
+              className="transition-opacity hover:opacity-80"
             >
-              <FaGithub className="size-5" />
-            </Link>
-            <Link
-              href={EXTERNAL_LINKS.TWITTER}
-              className="px-3 py-2.5 transition-opacity hover:opacity-80"
-              target="_blank"
-              aria-label="Twitter"
-            >
-              <FaXTwitter className="size-5" />
-            </Link>
-            <Link
-              href={EXTERNAL_LINKS.LINKEDIN}
-              className="px-3 py-2.5 transition-opacity hover:opacity-80"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin className="size-5" />
+              Felhasználási feltételek
             </Link>
           </div>
           <div className="bordered-div-padding flex items-center border-t text-[#00A656] md:border-t-0">
@@ -213,23 +192,6 @@ const Footer = () => {
             ></span>
             <span className="font-medium">Minden rendszer működik</span>
           </div>
-        </div>
-
-        {/* Legal Links Section */}
-        <div className="bordered-div-padding text-muted-foreground flex items-center justify-center space-x-6 border-x border-b text-sm">
-          <Link
-            href="/privacy-policy"
-            className="hover:text-foreground transition-opacity hover:opacity-80"
-          >
-            Adatvédelmi irányelvek
-          </Link>
-          <span className="text-border">•</span>
-          <Link
-            href="/terms-of-service"
-            className="hover:text-foreground transition-opacity hover:opacity-80"
-          >
-            Felhasználási feltételek
-          </Link>
         </div>
 
         {/* Large Logo */}

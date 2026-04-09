@@ -12,7 +12,7 @@ export function Testimonials() {
       <blockquote className="bordered-div-padding flex flex-col justify-between gap-8 border border-t-0 md:flex-row">
         <div className="flex-7 space-y-4">
           <p className="lg:text-4xxl font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl">
-            Kizárólag az van benne, amire szükséged van.
+            Kizárólag az van benne, ami kell...
           </p>
           <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
             Nincs felesleges, ki nem használt funkció. Kizárólag azokat a
