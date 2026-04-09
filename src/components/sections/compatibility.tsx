@@ -19,10 +19,14 @@ export function Compatibility() {
         <div className="mt-6">
           <p className="text-muted-foreground text-sm leading-relaxed md:text-base max-w-3xl">
             A statisztikák modulban részletes lekérdezéseket készíthetsz az
-            adataidból, így pontos képet kapsz a vállalkozásod teljesítményéről.
-            Könnyedén összeállíthatsz egyedi riportokat a leadekről,
-            ajánlatokról, partnerekről vagy projektek állapotáról. A korábbi
-            lekérdezések elmenthetők és újra felhasználhatók.
+            adataidból, így pontos képet kapsz a vállalkozásod
+            teljesítményéről. Könnyedén összeállíthatsz egyedi riportokat a
+            leadekről, ajánlatokról, partnerekről vagy projektek állapotáról. A
+            modul lehetőséget ad szűrések, feltételek és értékcserék
+            beállítására, így az elemzések teljes mértékben a saját igényeidhez
+            igazíthatók. A korábbi lekérdezések elmenthetők és újra
+            felhasználhatók, így időt takaríthatsz meg a rendszeres riportok
+            elkészítésekor.
           </p>
         </div>
       </div>

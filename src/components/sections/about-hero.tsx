@@ -13,10 +13,10 @@ export function AboutHero() {
         <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
           <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
             Egy modern,{' '}
-            <span className="block">felhasználóbarát CRM.</span>
+            <span className="block">felhasználóbarát CRM...</span>
           </h1>
           <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-            Az Avorasoft célja, hogy támogassa a vállalkozásokat a mindennapi
+            ...amelynek célja, hogy támogassa a vállalkozásokat a mindennapi
             működésben, az ügyfélkapcsolatok átlátható kezelésében és a belső
             folyamatok optimalizálásában.
           </p>

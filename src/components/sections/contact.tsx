@@ -36,7 +36,6 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form nem bekötve sehova — csak UI
     setSubmitted(true);
   };
 
@@ -50,7 +49,7 @@ export function ContactSection() {
           <div className="bordered-div-padding relative space-y-6 md:space-y-8 lg:space-y-10">
             <PlusSigns className="absolute inset-0 -mt-0.25 hidden !h-[calc(100%+2px)] -translate-x-full border-y md:block" />
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-              Készen állsz, hogy szintet lépj?
+              Készen állsz, hogy szintet lépj a vállalkozásodban?
             </h1>
             <p className="text-muted-foreground max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
               Vegyél búcsút a kaotikus Excel-tábláktól és az átláthatatlan
@@ -59,6 +58,8 @@ export function ContactSection() {
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
               Lépj kapcsolatba velünk még ma, és kérj bemutatót a szoftverről!
+              Ne hagyd ki a lehetőséget, hogy az Avorasoft a Te vállalkozásod
+              sikerének motorja legyen!
             </p>
           </div>
           {contactOptions.map((option, index) => (

@@ -17,7 +17,7 @@ export function Hero() {
           <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
             {/* Beta Banner */}
             <Link
-              href="#"
+              href="/contact"
               className="relative inline-flex items-center overflow-hidden rounded-sm p-[1px]"
             >
               <MovingBorder duration={4000}>
@@ -54,9 +54,7 @@ export function Hero() {
               <Link href="/contact">Bemutató kérése</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/product">
-                Modulok megtekintése
-              </Link>
+              <Link href="/product">Modulok megtekintése</Link>
             </Button>
           </div>
           <div

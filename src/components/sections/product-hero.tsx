@@ -10,11 +10,12 @@ export function ProductHero() {
         {/* Main Heading */}
         <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
           <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-            Modulok áttekintése
+            Nézzük át az Avorasoft CRM moduljait...
           </h1>
           <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-            Az Avorasoft CRM tartalmazza az összes olyan modult, amitől egy CRM
-            igazán hatékony, és még annál is többet.
+            Az Avorasoft CRM tartalmazza az összes olyan modult, amitől CRM egy
+            CRM és még annál is többet. A modulokat céged igényei szerint
+            alakítjuk.
           </p>
         </div>
 
@@ -24,9 +25,7 @@ export function ProductHero() {
             <Link href="/contact">Bemutató kérése</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/faq">
-              Gyakori kérdések
-            </Link>
+            <Link href="/faq">Gyakori kérdések</Link>
           </Button>
         </div>
       </div>

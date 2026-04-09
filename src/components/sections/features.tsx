@@ -8,25 +8,25 @@ const features = [
   {
     icon: ClipboardList,
     title: 'Feladatok',
-    description: 'Nincs több elfelejtett feladat.',
+    description: 'Nincs több végre nem hajtott, elfelejtett feladat...',
     subDescription:
-      'A teendők modul az aktuális napi, illetve jövőbeni teendőket jeleníti meg. Munkatársakat jelölhetsz ki, megváltoztathatod a státuszokat és beállíthatod a prioritást.',
+      'A teendők modul, az aktuális napi, illetve jövőbeni teendőket jeleníti meg a felhasználók részére. Jogosultsági szinttől függően a felhasználók új teendőket adhatnak hozzá, munkatársakat jelölhetnek ki a feladat elvégzésére, valamint megváltoztathatják a feladatok státuszát és beállíthatják a feladat lejáratát. A feladatok megjelölhetőek cimkékkel, melyek a feladatok sürgősségét (prioritását) ábrázolják.',
     image: '/images/modules/feladatok.png',
   },
   {
     icon: Columns3,
     title: 'Munkaterek',
-    description: 'Vizualizáld a folyamatokat.',
+    description: 'Mindenki számára vizualizálja a folyamatokat.',
     subDescription:
-      'A KanBan tábla jól nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a folyamatot.',
+      'A KanBan tábla jól nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a folyamatot. A KanBan azok számára is jó megoldás lehet, akik szeretnék átláthatóbbá tenni a vállalkozáson belüli munkafolyamatokat.',
     image: '/images/modules/kanban.png',
   },
   {
     icon: Users2,
-    title: 'Ügyfelek',
-    description: 'Kövesd az ügyfeleidet.',
+    title: 'Munkatársak',
+    description: 'Kövesd munkatársaid teljesítményét.',
     subDescription:
-      'Egy helyen kezelheted az összes ügyfelet, céget és személyt. Szűrhetsz típus szerint és új ügyfeleket vehetsz fel egyszerűen.',
+      'A munkatársak modulban egy helyen kezelheted és láthatod az összes dolgozót. Nyomon követheted, hogy melyik munkatársnak mennyi teendője, illetve feladata van jelenleg és új teendőket, feladatokat delegálhatsz számukra.',
     image: '/images/modules/ugyfelek.png',
   },
   {
@@ -34,7 +34,7 @@ const features = [
     title: 'Naptár',
     description: 'Kövesd nyomon az eseményeket.',
     subDescription:
-      'Egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket, találkozókat és határidőket. Napi, heti vagy havi bontásban, színkódolással.',
+      'A naptár modul segítségével egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket, találkozókat és határidőket. Könnyedén láthatod a napi, heti vagy havi bontású teendőidet, valamint megkülönböztetheted a különféle eseménytípusokat. Az események színkódolással jelennek meg, így gyorsan átláthatóvá válik a programod.',
     image: '/images/modules/naptar.png',
   },
 ];

@@ -9,19 +9,29 @@ export function Testimonials() {
           A szoftverről
         </h2>
       </div>
-      {/* Testimonial */}
       <blockquote className="bordered-div-padding flex flex-col justify-between gap-8 border border-t-0 md:flex-row">
-        <p className="lg:text-4xxl font-weight-display flex-7 text-2xl leading-snug tracking-tighter md:text-3xl">
-          Kizárólag az van benne, amire szükséged van.
-        </p>
-
-        <footer className="flex-6 self-end">
-          <p className="text-muted-foreground text-sm leading-relaxed md:text-lg lg:text-xl">
+        <div className="flex-7 space-y-4">
+          <p className="lg:text-4xxl font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl">
+            Kizárólag az van benne, amire szükséged van.
+          </p>
+          <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
             Nincs felesleges, ki nem használt funkció. Kizárólag azokat a
             modulokat aktiváljuk neked, amikre szükséged van, mindezt teljesen
             személyre szabottan, a céged arculatához illően.
           </p>
-        </footer>
+        </div>
+
+        <div className="flex-6 self-end space-y-4">
+          <p className="font-weight-display text-lg leading-snug md:text-xl">
+            Fokozd a csapatod hatékonyságát
+          </p>
+          <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
+            Mi hisszük, hogy a csapatmunkában van az erő és a szoftver minden
+            egyes funkciója ezt támogatja. Emeld új szintre csapatod
+            teljesítményét. Az Avorasoft CRM tartalmazza az összes olyan modult,
+            amitől CRM egy CRM és még annál is többet.
+          </p>
+        </div>
       </blockquote>
     </section>
   );

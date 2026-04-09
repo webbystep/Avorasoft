@@ -6,8 +6,8 @@ import {
   FolderOpen,
   Handshake,
   Mail,
-  MessageCircle,
   Megaphone,
+  MessageCircle,
   Users2,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -16,84 +16,84 @@ import { cn } from '@/lib/utils';
 
 const features = [
   {
-    icon: Columns3,
-    title: 'Munkaterek',
-    description: 'Saját és csapat munkaterek kezelése.',
+    icon: ClipboardList,
+    title: 'Feladatok',
+    description: 'Nincs több végre nem hajtott, elfelejtett feladat...',
     subDescription:
-      'A munkaterek modulban átláthatóan szervezheted a projektjeidet, csapataidat és a hozzájuk tartozó feladatokat.',
-    image: '/images/modules/munkaterek.png',
+      'A teendők modul, az aktuális napi, illetve jövőbeni teendőket jeleníti meg a felhasználók részére. Jogosultsági szinttől függően a felhasználók új teendőket adhatnak hozzá, munkatársakat jelölhetnek ki a feladat elvégzésére, valamint megváltoztathatják a feladatok státuszát és beállíthatják a feladat lejáratát. A feladatok megjelölhetőek cimkékkel, melyek a feladatok sürgősségét (prioritását) ábrázolják.',
+    image: '/images/modules/feladatok.png',
   },
   {
-    icon: ClipboardList,
-    title: 'KanBan tábla',
-    description: 'Vizualizáld a folyamatokat.',
+    icon: Columns3,
+    title: 'Munkaterek',
+    description: 'Mindenki számára vizualizálja a folyamatokat.',
     subDescription:
-      'A KanBan tábla nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a munkafolyamatokat.',
+      'A KanBan tábla jól nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a folyamatot. A KanBan azok számára is jó megoldás lehet, akik szeretnék átláthatóbbá tenni a vállalkozáson belüli munkafolyamatokat.',
     image: '/images/modules/kanban.png',
   },
   {
     icon: FolderOpen,
-    title: 'Feladatok',
-    description: 'Nincs több elfelejtett feladat.',
-    subDescription:
-      'A teendők modul az aktuális napi és jövőbeni teendőket jeleníti meg. Munkatársakat jelölhetsz ki, státuszokat változtathatsz és prioritást állíthatsz be.',
-    image: '/images/modules/feladatok.png',
-  },
-  {
-    icon: FolderOpen,
     title: 'Projektek',
-    description: 'Projektek táblázatos nézete.',
+    description: 'Projektek átlátható kezelése.',
     subDescription:
-      'Kövesd nyomon a projektjeid állapotát, felelőseit és határidejeit egy átlátható táblázatos nézetben.',
+      'Kövesd nyomon a projektjeid állapotát, felelőseit és határidejeit egy átlátható táblázatos nézetben. A projektek modulban mindent egy helyen láthatsz.',
     image: '/images/modules/projektek.png',
   },
   {
-    icon: Users2,
-    title: 'Ügyfelek',
-    description: 'Ügyfelek és cégek kezelése.',
+    icon: Columns3,
+    title: 'KanBan tábla',
+    description: 'Vizuális munkafolyamat-kezelés.',
     subDescription:
-      'Egy helyen kezelheted az összes ügyfelet, céget és személyt. Szűrhetsz típus szerint és új ügyfeleket vehetsz fel.',
+      'A KanBan tábla segítségével vizuálisan kezelheted a munkafolyamataidat. Húzd át a kártyákat az oszlopok között, kövesd a feladatok állapotát és tartsd kézben a projektjeidet.',
+    image: '/images/modules/munkaterek.png',
+  },
+  {
+    icon: Users2,
+    title: 'Munkatársak',
+    description: 'Kövesd munkatársaid teljesítményét.',
+    subDescription:
+      'A munkatársak modulban egy helyen kezelheted és láthatod az összes dolgozót. Nyomon követheted, hogy melyik munkatársnak mennyi teendője, illetve feladata van jelenleg és új teendőket, feladatokat delegálhatsz számukra.',
     image: '/images/modules/ugyfelek.png',
+  },
+  {
+    icon: Handshake,
+    title: 'Partnerek',
+    description: 'Az összes partner, alvállalkozó, beszállító egy helyen.',
+    subDescription:
+      'A partnerek modulban nyomon követheted az aktuális projekteket, amiket külsős cégekkel együtt végzel. Láthatod, hogy egy adott partnernél hány darab projekt fut jelenleg és, hogy hány munkatárs van hozzárendelve a projektekhez.',
+    image: '/images/modules/kampanyok.png',
   },
   {
     icon: CalendarDays,
     title: 'Naptár',
-    description: 'Események, találkozók, határidők.',
+    description: 'Kövesd nyomon az eseményeket.',
     subDescription:
-      'Egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket. Napi, heti vagy havi bontásban, színkódolással.',
+      'A naptár modul segítségével egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket, találkozókat és határidőket. Könnyedén láthatod a napi, heti vagy havi bontású teendőidet, valamint megkülönböztetheted a különféle eseménytípusokat – például meetingeket, rendezvényeket vagy csapatépítő alkalmakat. Az események színkódolással jelennek meg, így gyorsan átláthatóvá válik a programod.',
     image: '/images/modules/naptar.png',
   },
   {
     icon: BarChart3,
     title: 'Statisztika',
-    description: 'Riportok és elemzések.',
+    description: 'Az adat a lényeg...',
     subDescription:
-      'Részletes lekérdezéseket készíthetsz az adataidból. Egyedi riportokat állíthatsz össze, amelyek elmenthetők és újra felhasználhatók.',
+      'A statisztikák modulban részletes lekérdezéseket készíthetsz az adataidból, így pontos képet kapsz a vállalkozásod teljesítményéről. Könnyedén összeállíthatsz egyedi riportokat a leadekről, ajánlatokról, partnerekről vagy projektek állapotáról. A korábbi lekérdezések elmenthetők és újra felhasználhatók.',
     image: '/images/modules/statisztika.png',
   },
   {
     icon: MessageCircle,
     title: 'Chat',
-    description: 'Belső üzenetküldés.',
+    description: 'Belső kommunikáció egy helyen.',
     subDescription:
-      'Kommunikálj a csapattagokkal közvetlenül a CRM-en belül. Fájlok küldése, képek megosztása egy helyen.',
+      'Kommunikálj a csapattagokkal közvetlenül a CRM-en belül. Fájlok küldése, képek megosztása és valós idejű üzenetváltás egy helyen.',
     image: '/images/modules/chat.png',
   },
   {
     icon: Mail,
     title: 'Email kezelés',
-    description: 'Email-ek egy helyen.',
+    description: 'Üzleti levelezés a CRM-ből.',
     subDescription:
-      'Kezeld az üzleti levelezésedet közvetlenül a CRM-ből. Sablonok, tömeges küldés és nyomon követés.',
+      'Kezeld az üzleti levelezésedet közvetlenül a CRM-ből. Sablonok, tömeges küldés és nyomon követés egy integrált felületen.',
     image: '/images/modules/email.png',
-  },
-  {
-    icon: Megaphone,
-    title: 'Kampányok',
-    description: 'Marketing kampányok kezelése.',
-    subDescription:
-      'Tervezd és kövesd nyomon a marketing kampányaidat. Célcsoportok kezelése és eredmények mérése.',
-    image: '/images/modules/kampanyok.png',
   },
 ];
 
@@ -108,7 +108,8 @@ export function ProductFeatures() {
               'bordered-div-padding space-y-8',
               index % 2 === 0 && 'md:border-e',
               index < features.length - 2 && 'border-b',
-              index === features.length - 1 && 'border-t md:border-t-0 md:border-s',
+              index === features.length - 1 &&
+                'border-t md:border-t-0 md:border-s',
             )}
           >
             <div className="space-y-4 md:space-y-6">
