@@ -6,7 +6,6 @@ import {
   FolderOpen,
   Handshake,
   Mail,
-  Megaphone,
   MessageCircle,
   Users2,
 } from 'lucide-react';
