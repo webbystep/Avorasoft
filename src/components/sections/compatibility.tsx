@@ -26,7 +26,7 @@ export function Compatibility() {
           </p>
         </div>
       </div>
-      <div className="relative hidden overflow-hidden border-x border-b p-20 md:block">
+      <div className="relative hidden overflow-hidden border-x border-b p-20 md:block" style={{ contain: 'paint' }}>
         <Meteors
           number={1000}
           angle={65}
