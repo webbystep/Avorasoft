@@ -80,6 +80,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'SoftwareApplication',
+              name: 'Avorasoft CRM',
+              applicationCategory: 'BusinessApplication',
+              operatingSystem: 'Web',
+              description:
+                'Az Avorasoft CRM egy felhő alapú CRM szoftver. A modulokat céged igényei szerint alakítjuk.',
+              url: 'https://avorasoft.hu',
+              provider: {
+                '@type': 'Organization',
+                name: 'Avorasoft Kft.',
+                email: 'info@avorasoft.hu',
+                telephone: '+36203516383',
+                url: 'https://avorasoft.hu',
+              },
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} flex min-h-screen flex-col antialiased`}
       >

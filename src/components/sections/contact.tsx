@@ -33,10 +33,32 @@ export function ContactSection() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Hiba történt.');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Hiba történt az üzenet küldése közben.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -168,8 +190,12 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <Button type="submit" className="w-full">
-                Üzenet küldése
+              {error && (
+                <p className="text-sm text-red-500">{error}</p>
+              )}
+
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? 'Küldés...' : 'Üzenet küldése'}
               </Button>
             </form>
           )}

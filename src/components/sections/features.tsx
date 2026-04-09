@@ -11,7 +11,7 @@ const features = [
     description: 'Nincs több végre nem hajtott, elfelejtett feladat...',
     subDescription:
       'A teendők modul, az aktuális napi, illetve jövőbeni teendőket jeleníti meg a felhasználók részére. Jogosultsági szinttől függően a felhasználók új teendőket adhatnak hozzá, munkatársakat jelölhetnek ki a feladat elvégzésére, valamint megváltoztathatják a feladatok státuszát és beállíthatják a feladat lejáratát. A feladatok megjelölhetőek cimkékkel, melyek a feladatok sürgősségét (prioritását) ábrázolják.',
-    image: '/images/modules/feladatok.png',
+    image: '/images/modules/feladatok.webp',
   },
   {
     icon: Columns3,
@@ -19,7 +19,7 @@ const features = [
     description: 'Mindenki számára vizualizálja a folyamatokat.',
     subDescription:
       'A KanBan tábla jól nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a folyamatot. A KanBan azok számára is jó megoldás lehet, akik szeretnék átláthatóbbá tenni a vállalkozáson belüli munkafolyamatokat.',
-    image: '/images/modules/kanban.png',
+    image: '/images/modules/kanban.webp',
   },
   {
     icon: Users2,
@@ -27,7 +27,7 @@ const features = [
     description: 'Kövesd munkatársaid teljesítményét.',
     subDescription:
       'A munkatársak modulban egy helyen kezelheted és láthatod az összes dolgozót. Nyomon követheted, hogy melyik munkatársnak mennyi teendője, illetve feladata van jelenleg és új teendőket, feladatokat delegálhatsz számukra.',
-    image: '/images/modules/ugyfelek.png',
+    image: '/images/modules/ugyfelek.webp',
   },
   {
     icon: CalendarDays,
@@ -35,7 +35,7 @@ const features = [
     description: 'Kövesd nyomon az eseményeket.',
     subDescription:
       'A naptár modul segítségével egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket, találkozókat és határidőket. Könnyedén láthatod a napi, heti vagy havi bontású teendőidet, valamint megkülönböztetheted a különféle eseménytípusokat. Az események színkódolással jelennek meg, így gyorsan átláthatóvá válik a programod.',
-    image: '/images/modules/naptar.png',
+    image: '/images/modules/naptar.webp',
   },
 ];
 

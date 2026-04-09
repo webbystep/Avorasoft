@@ -20,7 +20,7 @@ const features = [
     description: 'Nincs több végre nem hajtott, elfelejtett feladat...',
     subDescription:
       'A teendők modul, az aktuális napi, illetve jövőbeni teendőket jeleníti meg a felhasználók részére. Jogosultsági szinttől függően a felhasználók új teendőket adhatnak hozzá, munkatársakat jelölhetnek ki a feladat elvégzésére, valamint megváltoztathatják a feladatok státuszát és beállíthatják a feladat lejáratát. A feladatok megjelölhetőek cimkékkel, melyek a feladatok sürgősségét (prioritását) ábrázolják.',
-    image: '/images/modules/feladatok.png',
+    image: '/images/modules/feladatok.webp',
   },
   {
     icon: Columns3,
@@ -28,7 +28,7 @@ const features = [
     description: 'Mindenki számára vizualizálja a folyamatokat.',
     subDescription:
       'A KanBan tábla jól nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a folyamatot. A KanBan azok számára is jó megoldás lehet, akik szeretnék átláthatóbbá tenni a vállalkozáson belüli munkafolyamatokat.',
-    image: '/images/modules/kanban.png',
+    image: '/images/modules/kanban.webp',
   },
   {
     icon: FolderOpen,
@@ -36,7 +36,7 @@ const features = [
     description: 'Projektek átlátható kezelése.',
     subDescription:
       'Kövesd nyomon a projektjeid állapotát, felelőseit és határidejeit egy átlátható táblázatos nézetben. A projektek modulban mindent egy helyen láthatsz.',
-    image: '/images/modules/projektek.png',
+    image: '/images/modules/projektek.webp',
   },
   {
     icon: Columns3,
@@ -44,7 +44,7 @@ const features = [
     description: 'Vizuális munkafolyamat-kezelés.',
     subDescription:
       'A KanBan tábla segítségével vizuálisan kezelheted a munkafolyamataidat. Húzd át a kártyákat az oszlopok között, kövesd a feladatok állapotát és tartsd kézben a projektjeidet.',
-    image: '/images/modules/munkaterek.png',
+    image: '/images/modules/munkaterek.webp',
   },
   {
     icon: Users2,
@@ -52,7 +52,7 @@ const features = [
     description: 'Kövesd munkatársaid teljesítményét.',
     subDescription:
       'A munkatársak modulban egy helyen kezelheted és láthatod az összes dolgozót. Nyomon követheted, hogy melyik munkatársnak mennyi teendője, illetve feladata van jelenleg és új teendőket, feladatokat delegálhatsz számukra.',
-    image: '/images/modules/ugyfelek.png',
+    image: '/images/modules/ugyfelek.webp',
   },
   {
     icon: Handshake,
@@ -60,7 +60,7 @@ const features = [
     description: 'Az összes partner, alvállalkozó, beszállító egy helyen.',
     subDescription:
       'A partnerek modulban nyomon követheted az aktuális projekteket, amiket külsős cégekkel együtt végzel. Láthatod, hogy egy adott partnernél hány darab projekt fut jelenleg és, hogy hány munkatárs van hozzárendelve a projektekhez.',
-    image: '/images/modules/kampanyok.png',
+    image: '/images/modules/kampanyok.webp',
   },
   {
     icon: CalendarDays,
@@ -68,7 +68,7 @@ const features = [
     description: 'Kövesd nyomon az eseményeket.',
     subDescription:
       'A naptár modul segítségével egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket, találkozókat és határidőket. Könnyedén láthatod a napi, heti vagy havi bontású teendőidet, valamint megkülönböztetheted a különféle eseménytípusokat – például meetingeket, rendezvényeket vagy csapatépítő alkalmakat. Az események színkódolással jelennek meg, így gyorsan átláthatóvá válik a programod.',
-    image: '/images/modules/naptar.png',
+    image: '/images/modules/naptar.webp',
   },
   {
     icon: BarChart3,
@@ -76,7 +76,7 @@ const features = [
     description: 'Az adat a lényeg...',
     subDescription:
       'A statisztikák modulban részletes lekérdezéseket készíthetsz az adataidból, így pontos képet kapsz a vállalkozásod teljesítményéről. Könnyedén összeállíthatsz egyedi riportokat a leadekről, ajánlatokról, partnerekről vagy projektek állapotáról. A korábbi lekérdezések elmenthetők és újra felhasználhatók.',
-    image: '/images/modules/statisztika.png',
+    image: '/images/modules/statisztika.webp',
   },
   {
     icon: MessageCircle,
@@ -84,7 +84,7 @@ const features = [
     description: 'Belső kommunikáció egy helyen.',
     subDescription:
       'Kommunikálj a csapattagokkal közvetlenül a CRM-en belül. Fájlok küldése, képek megosztása és valós idejű üzenetváltás egy helyen.',
-    image: '/images/modules/chat.png',
+    image: '/images/modules/chat.webp',
   },
   {
     icon: Mail,
@@ -92,7 +92,7 @@ const features = [
     description: 'Üzleti levelezés a CRM-ből.',
     subDescription:
       'Kezeld az üzleti levelezésedet közvetlenül a CRM-ből. Sablonok, tömeges küldés és nyomon követés egy integrált felületen.',
-    image: '/images/modules/email.png',
+    image: '/images/modules/email.webp',
   },
 ];
 

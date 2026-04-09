@@ -62,7 +62,7 @@ export function Hero() {
       <div className="container">
         <div className="bordered-div-padding flex items-center justify-center border">
           <Image
-            src="/images/modules/munkaterek.png"
+            src="/images/modules/munkaterek.webp"
             alt="Avorasoft CRM"
             width={1320}
             height={743}

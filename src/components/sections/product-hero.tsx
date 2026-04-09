@@ -31,7 +31,7 @@ export function ProductHero() {
       </div>
       <div className="bordered-div-padding flex items-center justify-center border">
         <Image
-          src="/images/modules/projektek.png"
+          src="/images/modules/projektek.webp"
           alt="Avorasoft CRM modulok"
           width={1320}
           height={743}
