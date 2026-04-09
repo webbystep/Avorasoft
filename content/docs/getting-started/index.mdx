@@ -1,0 +1,156 @@
+---
+title: Quick Start
+description: Get up and running with Scalar CMS in minutes
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { CodeBlock, Pre } from 'fumadocs-ui/components/codeblock';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+
+Get started with Scalar CMS and build your first content-driven application in minutes.
+
+## What is Scalar?
+
+Scalar is a modern headless CMS that provides a powerful admin interface, flexible content modeling, and developer-friendly APIs. It's designed to scale from simple websites to complex applications.
+
+### Key Features
+
+<Cards>
+  <Card
+    title="Flexible Content Models"
+    description="TypeScript-like schema definition with rich field types"
+  />
+  <Card
+    title="Auto-generated APIs"
+    description="REST and GraphQL APIs created automatically from your models"
+  />
+  <Card
+    title="Modern Admin UI"
+    description="Beautiful, intuitive interface for content management"
+  />
+  <Card
+    title="Framework Agnostic"
+    description="Works with Next.js, Nuxt, SvelteKit, Astro, and more"
+  />
+</Cards>
+
+## 5-Minute Setup
+
+<Steps>
+  <Step>
+    ### Install Scalar ```bash npx create-scalar-app my-app cd my-app npm
+    install ```
+  </Step>
+
+  <Step>
+    ### Configure your database ```bash title=".env"
+    DATABASE_URL="postgresql://username:password@localhost:5432/mydb"
+    SCALAR_SECRET="your-secret-key" ```
+  </Step>
+
+  <Step>
+    ### Start development ```bash npm run dev ``` Visit
+    `http://localhost:3000/admin` to access the admin panel.
+  </Step>
+</Steps>
+
+## Your First Content Model
+
+Define a simple blog post model:
+
+```typescript title="schema/post.ts"
+import { defineModel } from '@scalar/core';
+
+export const post = defineModel({
+  name: 'post',
+  label: 'Blog Post',
+
+  fields: {
+    title: {
+      type: 'text',
+      required: true,
+      label: 'Title',
+    },
+
+    content: {
+      type: 'richtext',
+      required: true,
+      label: 'Content',
+    },
+
+    publishedAt: {
+      type: 'datetime',
+      label: 'Published At',
+      defaultValue: () => new Date(),
+    },
+  },
+});
+```
+
+## Fetch Content
+
+Query your content using the generated API:
+
+<Tabs items={['REST API', 'GraphQL', 'JavaScript SDK']}>
+  <Tab value="REST API">
+    ```bash
+    curl https://your-app.com/api/post
+    ```
+  </Tab>
+  
+  <Tab value="GraphQL">
+    ```graphql
+    query {
+      posts {
+        id
+        title
+        content
+        publishedAt
+      }
+    }
+    ```
+  </Tab>
+  
+  <Tab value="JavaScript SDK">
+    ```javascript
+    import { scalar } from '@/lib/scalar';
+    
+    const posts = await scalar.content.findMany({
+      model: 'post',
+      sort: '-publishedAt'
+    });
+    ```
+  </Tab>
+</Tabs>
+
+## Next Steps
+
+<Cards>
+  <Card
+    title="Installation Guide"
+    description="Detailed setup instructions for different frameworks"
+    href="/docs/getting-started/installation"
+  />
+  <Card
+    title="Configuration"
+    description="Learn how to configure Scalar for your needs"
+    href="/docs/getting-started/configuration"
+  />
+  <Card
+    title="API Reference"
+    description="Complete API documentation"
+    href="/docs/api/reference"
+  />
+  <Card
+    title="Guides"
+    description="Step-by-step tutorials and examples"
+    href="/docs/guides"
+  />
+</Cards>
+
+<Callout type="info">
+  Need help? Join our [Discord community](https://discord.gg/scalar) or check
+  out the [GitHub repository](https://github.com/scalar-cms/scalar).
+</Callout>

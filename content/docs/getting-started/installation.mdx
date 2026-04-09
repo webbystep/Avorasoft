@@ -1,0 +1,300 @@
+---
+title: Installation
+description: Learn how to install and set up Scalar in your project
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { CodeBlock, Pre } from 'fumadocs-ui/components/codeblock';
+
+## Prerequisites
+
+Before installing Scalar, make sure you have:
+
+- Node.js 18 or later
+- A package manager (npm, yarn, or pnpm)
+- A database (PostgreSQL, MySQL, or SQLite)
+
+## Framework Installation
+
+<Tabs items={['Next.js', 'Nuxt.js', 'SvelteKit', 'Astro', 'React']}>
+  <Tab value="Next.js">
+    <Steps>
+      <Step>
+        ### Create a new Next.js project
+        
+        ```bash
+        npx create-next-app@latest my-scalar-app
+        cd my-scalar-app
+        ```
+      </Step>
+      
+      <Step>
+        ### Install Scalar
+        
+        ```bash
+        npm install @scalar/core @scalar/ui @scalar/cli
+        ```
+      </Step>
+      
+      <Step>
+        ### Initialize Scalar
+        
+        ```bash
+        npx scalar init
+        ```
+      </Step>
+      
+      <Step>
+        ### Configure your database
+        
+        Add your database configuration to `.env.local`:
+        
+        ```bash title=".env.local"
+        DATABASE_URL="postgresql://username:password@localhost:5432/mydb"
+        SCALAR_SECRET="your-secret-key"
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab value="Nuxt.js">
+    <Steps>
+      <Step>
+        ### Create a new Nuxt.js project
+        
+        ```bash
+        npx nuxi@latest init my-scalar-app
+        cd my-scalar-app
+        ```
+      </Step>
+      
+      <Step>
+        ### Install Scalar
+        
+        ```bash
+        npm install @scalar/nuxt @scalar/core
+        ```
+      </Step>
+      
+      <Step>
+        ### Add the Nuxt module
+        
+        ```typescript title="nuxt.config.ts"
+        export default defineNuxtConfig({
+          modules: ['@scalar/nuxt'],
+          scalar: {
+            // Configuration options
+          }
+        })
+        ```
+      </Step>
+      
+      <Step>
+        ### Configure environment variables
+        
+        ```bash title=".env"
+        DATABASE_URL="postgresql://username:password@localhost:5432/mydb"
+        SCALAR_SECRET="your-secret-key"
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab value="SvelteKit">
+    <Steps>
+      <Step>
+        ### Create a new SvelteKit project
+        
+        ```bash
+        npm create svelte@latest my-scalar-app
+        cd my-scalar-app
+        npm install
+        ```
+      </Step>
+      
+      <Step>
+        ### Install Scalar
+        
+        ```bash
+        npm install @scalar/sveltekit @scalar/core
+        ```
+      </Step>
+      
+      <Step>
+        ### Configure SvelteKit adapter
+        
+        ```javascript title="vite.config.js"
+        import { sveltekit } from '@sveltejs/kit/vite';
+        import { scalar } from '@scalar/sveltekit';
+
+        export default {
+          plugins: [sveltekit(), scalar()]
+        };
+        ```
+      </Step>
+
+      <Step>
+        ### Set up environment variables
+
+        ```bash title=".env"
+        DATABASE_URL="postgresql://username:password@localhost:5432/mydb"
+        SCALAR_SECRET="your-secret-key"
+        ```
+      </Step>
+    </Steps>
+
+  </Tab>
+  
+  <Tab value="Astro">
+    <Steps>
+      <Step>
+        ### Create a new Astro project
+        
+        ```bash
+        npm create astro@latest my-scalar-app
+        cd my-scalar-app
+        ```
+      </Step>
+      
+      <Step>
+        ### Install Scalar
+        
+        ```bash
+        npm install @scalar/astro @scalar/core
+        ```
+      </Step>
+      
+      <Step>
+        ### Configure Astro integration
+        
+        ```javascript title="astro.config.mjs"
+        import { defineConfig } from 'astro/config';
+        import scalar from '@scalar/astro';
+
+        export default defineConfig({
+          integrations: [scalar()]
+        });
+        ```
+      </Step>
+
+      <Step>
+        ### Add environment variables
+
+        ```bash title=".env"
+        DATABASE_URL="postgresql://username:password@localhost:5432/mydb"
+        SCALAR_SECRET="your-secret-key"
+        ```
+      </Step>
+    </Steps>
+
+  </Tab>
+  
+  <Tab value="React">
+    <Steps>
+      <Step>
+        ### Create a new React project
+        
+        ```bash
+        npx create-react-app my-scalar-app
+        cd my-scalar-app
+        ```
+      </Step>
+      
+      <Step>
+        ### Install Scalar
+        
+        ```bash
+        npm install @scalar/react @scalar/core
+        ```
+      </Step>
+      
+      <Step>
+        ### Set up Scalar provider
+        
+        ```tsx title="src/App.tsx"
+        import { ScalarProvider } from '@scalar/react';
+
+        function App() {
+          return (
+            <ScalarProvider config={{ apiUrl: '/api' }}>
+              {/* Your app components */}
+            </ScalarProvider>
+          );
+        }
+        ```
+      </Step>
+
+      <Step>
+        ### Configure environment variables
+
+        ```bash title=".env"
+        REACT_APP_DATABASE_URL="postgresql://username:password@localhost:5432/mydb"
+        REACT_APP_SCALAR_SECRET="your-secret-key"
+        ```
+      </Step>
+    </Steps>
+
+  </Tab>
+</Tabs>
+
+## Database Setup
+
+<Callout type="info">
+  Scalar supports PostgreSQL, MySQL, and SQLite. We recommend PostgreSQL for
+  production applications.
+</Callout>
+
+### PostgreSQL
+
+```bash
+# Install PostgreSQL (macOS)
+brew install postgresql
+brew services start postgresql
+
+# Create a database
+createdb my-scalar-db
+```
+
+### MySQL
+
+```bash
+# Install MySQL (macOS)
+brew install mysql
+brew services start mysql
+
+# Create a database
+mysql -u root -p -e "CREATE DATABASE my_scalar_db;"
+```
+
+### SQLite
+
+For development, you can use SQLite which requires no additional setup:
+
+```bash title=".env"
+DATABASE_URL="file:./dev.db"
+```
+
+## Verification
+
+After installation, verify everything is working:
+
+```bash
+npx scalar generate
+npx scalar migrate
+npm run dev
+```
+
+Visit your application and you should see the Scalar admin interface at `/admin`.
+
+## Next Steps
+
+- [Configure your first content models](/docs/configuration)
+- [Learn about the API](/docs/api-reference)
+- [Check out examples](/docs/examples)
+
+<Callout type="warning">
+  Make sure to keep your `SCALAR_SECRET` environment variable secure and never
+  commit it to version control.
+</Callout>

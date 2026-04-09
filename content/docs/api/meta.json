@@ -1,0 +1,5 @@
+{
+  "title": "API Reference",
+  "description": "Complete API documentation and integration guides",
+  "pages": ["api-reference", "authentication", "webhooks"]
+}
