@@ -153,6 +153,7 @@ function Navbar() {
         >
           <Logo
             className="ps-6 transition-all duration-300 lg:ps-0"
+            forceDark={isMenuColorInverted ? theme !== 'dark' : undefined}
           />
 
           {/* Hamburger Menu Button (Mobile Only) */}
