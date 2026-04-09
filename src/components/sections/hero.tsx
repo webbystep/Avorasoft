@@ -90,7 +90,7 @@ const partner = await crm.partners.create({
       <div className="container">
         <div className="bordered-div-padding flex items-center justify-center border">
           <Image
-            src="/images/landing/hero.webp"
+            src="/images/modules/munkaterek.png"
             alt="Avorasoft CRM"
             width={1320}
             height={743}

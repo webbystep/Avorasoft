@@ -3,26 +3,15 @@ import Image from 'next/image';
 
 import { PlusSigns } from '@/components/icons/plus-signs';
 import { cn } from '@/lib/utils';
+
 const features = [
   {
     icon: ClipboardList,
-    title: (
-      <>
-        Feladatok
-      </>
-    ),
+    title: 'Feladatok',
     description: 'Nincs több elfelejtett feladat.',
     subDescription:
       'A teendők modul az aktuális napi, illetve jövőbeni teendőket jeleníti meg. Munkatársakat jelölhetsz ki, megváltoztathatod a státuszokat és beállíthatod a prioritást.',
-    className: '!pb-0',
-    images: [
-      {
-        src: '/images/landing/feature-1.webp',
-        alt: 'Feladatok modul',
-        width: 700,
-        height: 320,
-      },
-    ],
+    image: '/images/modules/feladatok.png',
   },
   {
     icon: Columns3,
@@ -30,34 +19,15 @@ const features = [
     description: 'Vizualizáld a folyamatokat.',
     subDescription:
       'A KanBan tábla jól nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a folyamatot.',
-    className: '!pb-0',
-    images: [
-      {
-        src: '/images/landing/feature-2-1.webp',
-        alt: 'Munkaterek',
-        width: 620,
-        height: 108,
-      },
-      {
-        src: '/images/landing/feature-2-2.webp',
-        alt: 'Munkaterek',
-        width: 620,
-        height: 108,
-      },
-      {
-        src: '/images/landing/feature-2-3.webp',
-        alt: 'Munkaterek',
-        width: 620,
-        height: 108,
-      },
-    ],
+    image: '/images/modules/kanban.png',
   },
   {
     icon: Users2,
-    title: 'Munkatársak',
-    description: 'Kövesd a csapatod teljesítményét.',
+    title: 'Ügyfelek',
+    description: 'Kövesd az ügyfeleidet.',
     subDescription:
-      'Egy helyen kezelheted és láthatod az összes dolgozót. Nyomon követheted, hogy melyik munkatársnak mennyi teendője van és új feladatokat delegálhatsz számukra.',
+      'Egy helyen kezelheted az összes ügyfelet, céget és személyt. Szűrhetsz típus szerint és új ügyfeleket vehetsz fel egyszerűen.',
+    image: '/images/modules/ugyfelek.png',
   },
   {
     icon: CalendarDays,
@@ -65,6 +35,7 @@ const features = [
     description: 'Kövesd nyomon az eseményeket.',
     subDescription:
       'Egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket, találkozókat és határidőket. Napi, heti vagy havi bontásban, színkódolással.',
+    image: '/images/modules/naptar.png',
   },
 ];
 
@@ -77,10 +48,9 @@ export function Features() {
             key={index}
             className={cn(
               'bordered-div-padding relative space-y-8',
-              index == 0 && 'border-b md:border-e',
-              index == 1 && 'border-b md:border-b-0',
-              index == 3 && 'border-t md:border-s',
-              feature.className,
+              index === 0 && 'border-b md:border-e',
+              index === 1 && 'border-b md:border-b-0',
+              index === 3 && 'border-t md:border-s',
             )}
           >
             {index === 0 && (
@@ -101,19 +71,15 @@ export function Features() {
               </p>
             </div>
 
-            {feature.images && (
-              <div className="flex flex-col gap-4 mask-b-from-30% mask-b-to-95%">
-                {feature.images.map((image, index) => (
-                  <Image
-                    key={index}
-                    src={image.src}
-                    alt={''}
-                    width={image.width}
-                    height={image.height}
-                  />
-                ))}
-              </div>
-            )}
+            <div className="mask-b-from-50% mask-b-to-95%">
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={700}
+                height={400}
+                className="rounded-sm"
+              />
+            </div>
           </div>
         ))}
       </div>
