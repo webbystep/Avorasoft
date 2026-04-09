@@ -1,15 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  Box,
-  ChevronDown,
-  Code2,
-  Database,
-  Pencil,
-  Terminal,
-  Users,
-} from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
@@ -46,63 +38,7 @@ type NavItem = {
 };
 
 const navigationItems: NavItem[] = [
-  {
-    title: 'Modulok',
-    subitems: [
-      {
-        title: 'CRM Modulok',
-        items: [
-          {
-            title: 'Feladatok',
-            href: '/product',
-            description: 'Teendők kezelése, delegálás, prioritások',
-            icon: Pencil,
-            isHighlighted: true,
-          },
-          {
-            title: 'Munkaterek',
-            href: '/product',
-            description: 'KanBan tábla a folyamatok vizualizálásához',
-            icon: Users,
-          },
-        ],
-      },
-      {
-        title: 'Kezelés',
-        items: [
-          {
-            title: 'Munkatársak',
-            href: '/product',
-            description: 'Csapatod teljesítményének nyomon követése',
-            icon: Database,
-          },
-          {
-            title: 'Partnerek',
-            href: '/product',
-            description: 'Alvállalkozók, beszállítók egy helyen',
-            icon: Terminal,
-          },
-          {
-            title: 'Naptár',
-            href: '/product',
-            description: 'Események, találkozók, határidők',
-            icon: Code2,
-          },
-        ],
-      },
-      {
-        title: 'Elemzés',
-        items: [
-          {
-            title: 'Statisztika',
-            href: '/product',
-            description: 'Egyedi riportok és lekérdezések',
-            icon: Box,
-          },
-        ],
-      },
-    ],
-  },
+  { title: 'Modulok', href: '/product' },
   { title: 'Rólunk', href: '/about' },
   { title: 'GYIK', href: '/faq' },
   { title: 'Kapcsolat', href: '/contact' },

@@ -4,7 +4,6 @@ import { RootProvider } from 'fumadocs-ui/provider';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import Banner from '@/components/layout/banner';
 import CookieBanner from '@/components/layout/cookie-banner';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
@@ -97,7 +96,6 @@ export default function RootLayout({
             }}
           >
             <StyleGlideProvider />
-            <Banner url="/contact" />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
