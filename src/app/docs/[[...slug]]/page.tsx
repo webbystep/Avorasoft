@@ -47,8 +47,10 @@ export default async function Page(props: {
   );
 }
 
-export async function generateStaticParams() {
-  return source.generateParams();
+export const dynamic = 'force-dynamic';
+
+export function generateStaticParams() {
+  return [];
 }
 
 export async function generateMetadata(props: {
