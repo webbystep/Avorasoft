@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { MovingBorder } from '@/components/ui/moving-border';
-import { cn } from '@/lib/utils';
 
 export function Hero() {
   return (
@@ -56,32 +55,6 @@ export function Hero() {
             <Button asChild variant="outline">
               <Link href="/product">Modulok megtekintése</Link>
             </Button>
-          </div>
-          <div
-            className={cn(
-              'pointer-events-none absolute top-0 left-full hidden h-[calc(100%+1px)] w-screen overflow-hidden border-b text-start select-none lg:block',
-            )}
-            aria-hidden="true"
-            role="presentation"
-          >
-            <p className="p-4 whitespace-pre opacity-20">{`// Avorasoft CRM API
-const crm = new AvorasoftCRM({
-  apiKey: process.env.AVORA_API_KEY,
-  workspace: "your-workspace",
-});
-
-// Feladatok lekérdezése
-const tasks = await crm.tasks.list({
-  status: "active",
-  assignee: "team-lead",
-  priority: "high",
-});
-
-// Partner létrehozása
-const partner = await crm.partners.create({
-  name: "Példa Kft.",
-  type: "supplier",
-});`}</p>
           </div>
         </div>
       </div>
