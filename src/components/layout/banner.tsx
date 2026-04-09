@@ -34,20 +34,20 @@ const Banner = ({ url = 'https://shadcnblocks.com' }: { url?: string }) => {
       <div className="container flex items-center justify-between gap-4 py-3 pr-12">
         <div className="flex flex-1 items-center justify-center gap-3 sm:gap-4">
           <span className="text-sm font-medium text-center text-primary-foreground">
-            Purchase this theme on{' '}
-            <span className="font-semibold">shadcnblocks.com</span>
+            Ismerd meg az{' '}
+            <span className="font-semibold">Avorasoft CRM</span>-et
           </span>
           <Button
             size="sm"
             variant="secondary"
             asChild
           >
-            <a 
-              href={url} 
+            <a
+              href={url}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Get Template
+              Bemutató kérése
             </a>
           </Button>
         </div>

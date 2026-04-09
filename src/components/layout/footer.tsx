@@ -22,60 +22,60 @@ import { cn } from '@/lib/utils';
 
 const FEATURES = [
   {
-    title: 'Open Source',
-    description: '0$ / forever',
+    title: 'Alap csomag',
+    description: 'Egyedi árazás',
     features: [
       {
-        name: 'Self-host on your own infrastructure',
+        name: 'Felhő alapú infrastruktúra',
         icon: <Server className="size-5" />,
       },
       {
-        name: 'Full access to the Scalar CMS core',
+        name: 'Feladatkezelés és KanBan munkaterek',
         icon: <FileCode className="size-5" />,
       },
       {
-        name: 'GitHub community support',
-        icon: <FaGithub className="size-5" />,
+        name: 'Munkatársak és partnerek kezelése',
+        icon: <Users className="size-5" />,
       },
       {
-        name: 'Ideal for developers and internal tools',
+        name: 'Naptár és eseménykezelés',
         icon: <Terminal className="size-5" />,
       },
     ],
     button: {
-      text: 'View on GitHub',
-      href: EXTERNAL_LINKS.GITHUB_REPO,
+      text: 'Kapcsolat',
+      href: '/contact',
       className: 'bg-border hover:bg-border/80 text-foreground',
     },
   },
   {
-    title: 'Cloud',
-    description: 'From $29 / month',
+    title: 'Prémium csomag',
+    description: 'Egyedi árazás',
     features: [
       {
-        name: 'Fully managed infrastructure',
+        name: 'Minden az Alap csomagból',
         icon: <Server className="size-5" />,
       },
       {
-        name: 'Realtime collaboration & autosave',
-        icon: <Users className="size-5" />,
+        name: 'Statisztikák és egyedi riportok',
+        icon: <LineChart className="size-5" />,
       },
       {
-        name: 'Role-based access & team permissions',
+        name: 'Jogosultsági szintek kezelése',
         icon: <Lock className="size-5" />,
       },
       {
-        name: 'Built-in CDN for media delivery',
+        name: 'Céges arculathoz igazított felület',
         icon: <Globe className="size-5" />,
       },
       {
-        name: 'Email support & usage analytics',
-        icon: <LineChart className="size-5" />,
+        name: 'Egyedi modulok fejlesztése',
+        icon: <FileCode className="size-5" />,
       },
     ],
     button: {
-      text: 'Start Free Trial',
-      href: '/signup',
+      text: 'Bemutató kérése',
+      href: '/contact',
     },
   },
 ];
@@ -111,7 +111,7 @@ const Footer = () => {
       <div className="container">
         <div className="bordered-div-padding border-x">
           <h2 className="lg:text-4xxl font-weight-display mt-6 text-xl md:mt-14 md:text-3xl lg:mt-40">
-            Start free. Scale confidently.
+            Válaszd ki a neked megfelelő csomagot.
           </h2>
         </div>
 
@@ -129,7 +129,7 @@ const Footer = () => {
 
               {index === 1 && (
                 <div className="bg-secondary text-secondary-foreground absolute top-0 right-0 px-3 py-2.5 text-sm leading-none font-medium">
-                  Most popular
+                  Ajánlott
                 </div>
               )}
               <div>
@@ -211,7 +211,7 @@ const Footer = () => {
                 'me-3 h-2 w-2 animate-pulse rounded-full bg-[#00A656]',
               )}
             ></span>
-            <span className="font-medium">All systems operational</span>
+            <span className="font-medium">Minden rendszer működik</span>
           </div>
         </div>
 
@@ -221,19 +221,20 @@ const Footer = () => {
             href="/privacy-policy"
             className="hover:text-foreground transition-opacity hover:opacity-80"
           >
-            Privacy Policy
+            Adatvédelmi irányelvek
           </Link>
           <span className="text-border">•</span>
           <Link
             href="/terms-of-service"
             className="hover:text-foreground transition-opacity hover:opacity-80"
           >
-            Terms of Service
+            Felhasználási feltételek
           </Link>
         </div>
 
         {/* Large Logo */}
         <Logo
+          variant="wordmark"
           className="justify-center border-x"
           iconClassName="hidden"
           wordmarkClassName={logoWordmarkClass}

@@ -1,20 +1,20 @@
-import { FileCode, GitCommit, MonitorSpeaker, Zap } from 'lucide-react';
+import { Handshake, BarChart3, CalendarDays, ClipboardList } from 'lucide-react';
 import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
 
 const features = [
   {
-    icon: GitCommit,
-    title: 'Track Changes',
-    description: 'GitHub Integration',
+    icon: ClipboardList,
+    title: 'Feladatok',
+    description: 'Feladatkezelés és delegálás',
     subDescription:
-      "Scalar's GitHub Sync lets you track model changes like any other code. Collaborate on schema changes just like features or fixes.",
+      'A teendők modul az aktuális napi, illetve jövőbeni teendőket jeleníti meg. Jogosultsági szinttől függően új teendőket adhatsz hozzá, munkatársakat jelölhetsz ki és beállíthatod a prioritást.',
     className: '',
     images: [
       {
         src: '/images/product/feature-1.webp',
-        alt: 'GitHub Integration',
+        alt: 'Feladatok modul',
         width: 700,
         height: 320,
         className: '',
@@ -22,16 +22,16 @@ const features = [
     ],
   },
   {
-    icon: MonitorSpeaker,
-    title: 'Local Development',
-    description: 'Develop locally. Push globally',
+    icon: Handshake,
+    title: 'Partnerek',
+    description: 'Minden partner egy helyen',
     subDescription:
-      "With npx scalar dev, your local environment becomes the control hub. Work offline, iterate rapidly, and push when you're ready.",
+      'A partnerek modulban nyomon követheted az aktuális projekteket, amiket külsős cégekkel együtt végzel. Láthatod, hogy egy adott partnernél hány projekt fut és mennyi munkatárs van hozzárendelve.',
     className: '',
     images: [
       {
         src: '/images/product/feature-2.webp',
-        alt: 'Local Development',
+        alt: 'Partnerek modul',
         width: 620,
         height: 108,
         className: '',
@@ -39,22 +39,22 @@ const features = [
     ],
   },
   {
-    icon: FileCode,
-    title: 'Model Definitions',
-    description: 'Define once, use everywhere content',
+    icon: CalendarDays,
+    title: 'Naptár',
+    description: 'Események, találkozók, határidők',
     subDescription:
-      'Write once in code. Scalar reflects it in the admin panel immediately.',
+      'Egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket. Napi, heti vagy havi bontásban, színkódolással megkülönböztetheted az eseménytípusokat.',
     images: [
       {
         src: '/images/product/feature-3-1.webp',
-        alt: 'Model Definitions',
+        alt: 'Naptár modul',
         width: 326,
         height: 170,
         className: '',
       },
       {
         src: '/images/product/feature-3-2.webp',
-        alt: 'Model Definitions',
+        alt: 'Naptár modul',
         width: 419,
         height: 170,
         className: 'self-end',
@@ -62,50 +62,50 @@ const features = [
     ],
   },
   {
-    icon: Zap,
-    title: 'Ready to Scale',
-    description: 'Code-first, but never code-only',
+    icon: BarChart3,
+    title: 'Statisztika',
+    description: 'Riportok és elemzések',
     subDescription:
-      'Your teammates can still use the visual UI. Scalar lets devs code, and non-devs manage content with equal ease.',
+      'Részletes lekérdezéseket készíthetsz az adataidból. Egyedi riportokat állíthatsz össze, amelyek elmenthetők és újra felhasználhatók.',
     images: [
       {
         src: '/images/product/feature-4-1.webp',
-        alt: 'Ready to Scale',
+        alt: 'Statisztika',
         width: 327,
         height: 60,
         className: '',
       },
       {
         src: '/images/product/feature-4-2.webp',
-        alt: 'Ready to Scale',
+        alt: 'Statisztika',
         width: 316,
         height: 60,
         className: 'self-end',
       },
       {
         src: '/images/product/feature-4-3.webp',
-        alt: 'Ready to Scale',
+        alt: 'Statisztika',
         width: 271,
         height: 84,
         className: '',
       },
       {
         src: '/images/product/feature-4-4.webp',
-        alt: 'Ready to Scale',
+        alt: 'Statisztika',
         width: 221,
         height: 60,
         className: 'self-end',
       },
       {
         src: '/images/product/feature-4-5.webp',
-        alt: 'Ready to Scale',
+        alt: 'Statisztika',
         width: 174,
         height: 56,
         className: 'absolute bottom-24 right-[4vw]',
       },
       {
         src: '/images/product/feature-4-6.webp',
-        alt: 'Ready to Scale',
+        alt: 'Statisztika',
         width: 96,
         height: 42,
         className: 'absolute top-22 left-[4vw]',

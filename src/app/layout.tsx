@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import Banner from '@/components/layout/banner';
+import CookieBanner from '@/components/layout/cookie-banner';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { StyleGlideProvider } from '@/components/styleglide-provider';
@@ -15,26 +16,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://avorasoft.hu'),
   title: {
-    default: 'Scalar - Modern Next.js Template',
-    template: '%s | Scalar',
+    default: 'Avorasoft CRM - Adatvezérelt CRM modern csapatok számára',
+    template: '%s | Avorasoft CRM',
   },
   description:
-    'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
+    'Az Avorasoft CRM egy felhő alapú CRM szoftver. A modulokat céged igényei szerint alakítjuk és egyedi modulok fejlesztésével támogatjuk munkafolyamataid leegyszerűsítését.',
   keywords: [
-    'Next.js',
-    'React',
-    'JavaScript',
-    'TypeScript',
-    'TailwindCSS',
-    'Template',
-    'Shadcn/UI',
-    'Web Development',
+    'CRM',
+    'ügyfélkapcsolat-kezelés',
+    'felhő alapú',
+    'feladatkezelés',
+    'KanBan',
+    'projektmenedzsment',
+    'Avorasoft',
   ],
-  authors: [{ name: 'Scalar - Shadcnblocks.com' }],
-  creator: 'Scalar - Shadcnblocks.com',
-  publisher: 'Scalar',
+  authors: [{ name: 'Avorasoft' }],
+  creator: 'Avorasoft',
+  publisher: 'Avorasoft',
   robots: {
     index: true,
     follow: true,
@@ -51,26 +51,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: '/favicon/favicon.ico' }],
   },
   openGraph: {
-    title: 'Scalar - Modern Next.js Template',
+    title: 'Avorasoft CRM - Adatvezérelt CRM modern csapatok számára',
     description:
-      'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
-    siteName: 'Scalar',
+      'Az Avorasoft CRM egy felhő alapú CRM szoftver. A modulokat céged igényei szerint alakítjuk.',
+    siteName: 'Avorasoft CRM',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Scalar - Modern Next.js Template',
+        alt: 'Avorasoft CRM',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Scalar - Modern Next.js Template',
+    title: 'Avorasoft CRM - Adatvezérelt CRM modern csapatok számára',
     description:
-      'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
-    images: ['/og-image.jpg'],
-    creator: '@shadcnblocks',
+      'Az Avorasoft CRM egy felhő alapú CRM szoftver a vállalkozásod számára.',
+    images: ['/og-image.png'],
+    creator: '@avorasoft',
   },
 };
 
@@ -80,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="hu" suppressHydrationWarning>
       <body
         className={`${inter.variable} flex min-h-screen flex-col antialiased`}
       >
@@ -97,10 +97,11 @@ export default function RootLayout({
             }}
           >
             <StyleGlideProvider />
-            <Banner url="https://shadcnblocks.com/template/scalar" />
+            <Banner url="/contact" />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
+            <CookieBanner />
           </RootProvider>
         </ThemeProvider>
       </body>

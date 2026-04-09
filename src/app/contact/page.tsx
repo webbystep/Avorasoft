@@ -3,9 +3,9 @@ import { Metadata } from 'next';
 import { ContactSection } from '@/components/sections/contact';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Scalar',
+  title: 'Kapcsolat | Avorasoft CRM',
   description:
-    'Get in touch with the Scalar team. Whether you have questions, feedback, or just want to say hello.',
+    'Lépj kapcsolatba az Avorasoft csapatával. Kérj bemutatót a CRM szoftverről!',
 };
 
 export default function ContactPage() {

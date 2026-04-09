@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FaDiscord, FaGithub } from 'react-icons/fa6';
 
 import { PlusSigns } from '@/components/icons/plus-signs';
 import { Button } from '@/components/ui/button';
@@ -13,28 +12,23 @@ export function AboutHero() {
         {/* Main Heading */}
         <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
           <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-            Built for developers,{' '}
-            <span className="block">Backed by community</span>
+            Egy modern,{' '}
+            <span className="block">felhasználóbarát CRM.</span>
           </h1>
           <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-            Scalar is the open content platform that puts speed, control, and
-            freedom in your hands — without giving up collaboration or scale.
+            Az Avorasoft célja, hogy támogassa a vállalkozásokat a mindennapi
+            működésben, az ügyfélkapcsolatok átlátható kezelésében és a belső
+            folyamatok optimalizálásában.
           </p>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
           <Button asChild>
-            <Link href="#">
-              <FaDiscord className="size-5" />
-              Join our Discord
-            </Link>
+            <Link href="/contact">Bemutató kérése</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="#">
-              <FaGithub className="size-5" />
-              Star on GitHub
-            </Link>
+            <Link href="/product">Modulok</Link>
           </Button>
         </div>
       </div>

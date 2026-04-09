@@ -1,7 +1,6 @@
 'use client';
 
 import { ChevronDown } from 'lucide-react';
-import Link from 'next/link';
 import { useState } from 'react';
 
 import { Meteors } from '@/components/magicui/meteors';
@@ -21,16 +20,16 @@ import {
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 type Category =
-  | 'Developers'
-  | 'Content Editing & Workflow'
-  | 'Cloud & Hosting'
-  | 'Community & Support';
+  | 'Általános'
+  | 'Modulok'
+  | 'Testreszabás'
+  | 'Támogatás';
 
 const categories: Category[] = [
-  'Developers',
-  'Content Editing & Workflow',
-  'Cloud & Hosting',
-  'Community & Support',
+  'Általános',
+  'Modulok',
+  'Testreszabás',
+  'Támogatás',
 ];
 
 type FAQ = {
@@ -39,71 +38,62 @@ type FAQ = {
 };
 
 const faqs: Record<Category, FAQ[]> = {
-  Developers: [
+  'Általános': [
     {
-      question: 'How do I install Scalar CMS in my project?',
-      answer: (
-        <>
-          You can install Scalar with a single CLI command. It supports popular
-          frameworks like Next.js, Nuxt, SvelteKit, and more. Use our official
-          SDK or connect directly to the GraphQL API. See the{' '}
-          <Link href="#" className="text-primary underline">
-            Quickstart Guide
-          </Link>{' '}
-          for full details.
-        </>
-      ),
+      question: 'Mi az az Avorasoft CRM?',
+      answer:
+        'Az Avorasoft CRM egy felhő alapú ügyfélkapcsolat-kezelő szoftver, amelyet a vállalkozásod igényei szerint alakítunk. Nem egy dobozos megoldás — kizárólag azokat a modulokat aktiváljuk, amikre szükséged van.',
     },
     {
-      question: 'Is Scalar open source?',
+      question: 'Hogyan férhetek hozzá a rendszerhez?',
       answer:
-        'Yes, Scalar is fully open source under the MIT license. You can view, modify, and contribute to the codebase on GitHub. Our cloud offering provides additional enterprise features, but the core CMS is free to use.',
+        'A felhőalapú működésnek köszönhetően bárhonnan, bármikor hozzáférhetsz az adatokhoz — számítógépről, tabletről vagy mobiltelefonról. A hatékony munka többé nincs helyhez kötve.',
     },
     {
-      question: 'What API types does Scalar support?',
+      question: 'Kinek ajánlott az Avorasoft CRM?',
       answer:
-        'Scalar provides both GraphQL and REST APIs. The GraphQL API offers a flexible query language with strong typing, while the REST API provides simple HTTP endpoints for common operations. Both APIs are fully documented with SDKs available in multiple languages.',
-    },
-    {
-      question: 'Can I define content models with code?',
-      answer:
-        'Yes, Scalar supports code-first content modeling. You can define your schemas using TypeScript, allowing for version control and type safety. This approach works well with CI/CD pipelines and makes it easy to maintain consistent content structures across environments.',
+        'Minden olyan vállalkozásnak, aki szeretné átláthatóbbá tenni a belső folyamatait, nyomon követni az ügyfeleit és a csapat munkáját. Kis- és középvállalkozások számára ideális megoldás.',
     },
   ],
-  'Content Editing & Workflow': [
+  'Modulok': [
     {
-      question: 'Can I create custom content workflows?',
+      question: 'Milyen modulokat tartalmaz a rendszer?',
       answer:
-        'Yes, Scalar allows you to define custom workflows for content creation, review, and publishing. You can set up multiple stages with granular permissions for different team members.',
+        'A rendszer főbb moduljai: Feladatok, Munkaterek (KanBan), Munkatársak, Partnerek, Naptár és Statisztika. Minden modul személyre szabható a céged igényei szerint.',
     },
     {
-      question: 'Does Scalar support real-time collaboration?',
+      question: 'Mi az a KanBan tábla?',
       answer:
-        'Yes, our Cloud plan includes real-time collaboration features, allowing multiple team members to work on content simultaneously with live updates and conflict resolution.',
-    },
-  ],
-  'Cloud & Hosting': [
-    {
-      question: 'What are the differences between self-hosted and cloud?',
-      answer:
-        'The self-hosted version gives you complete control over your infrastructure but requires you to manage hosting, backups, and scaling. The Cloud version is fully managed with additional features like real-time collaboration, role-based access controls, and built-in CDN.',
+        'A KanBan tábla egy vizuális eszköz, amely nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a munkafolyamatokat.',
     },
     {
-      question: 'Can I migrate from self-hosted to cloud later?',
+      question: 'Hogyan működik a Partnerek modul?',
       answer:
-        'Yes, we provide migration tools to easily transfer your content and settings from a self-hosted Scalar instance to our cloud platform.',
+        'A Partnerek modulban nyomon követheted az aktuális projekteket, amiket külsős cégekkel együtt végzel. Láthatod, hogy egy adott partnernél hány projekt fut és mennyi munkatárs van hozzárendelve.',
     },
   ],
-  'Community & Support': [
+  'Testreszabás': [
     {
-      question: 'Where can I get help with Scalar?',
+      question: 'Mennyire szabható testre a rendszer?',
       answer:
-        'For the open-source version, we have an active community on Discord and GitHub. Cloud customers receive email support and access to our knowledge base. Enterprise plans include dedicated support channels and SLAs.',
+        'Teljesen. A modulokat a céged igényei szerint alakítjuk, az arculatodhoz illően. Egyedi modulok fejlesztésével is támogatjuk a munkafolyamataid leegyszerűsítését.',
     },
     {
-      question: 'How can I contribute to Scalar?',
+      question: 'Készíthetek egyedi riportokat?',
       answer:
-        'We welcome contributions! You can contribute code, report bugs, suggest features, or help improve our documentation. Check our GitHub repository for contribution guidelines.',
+        'Igen, a Statisztika modulban részletes, egyedi lekérdezéseket készíthetsz. A korábbi lekérdezések elmenthetők és újra felhasználhatók, így időt takaríthatsz meg.',
+    },
+  ],
+  'Támogatás': [
+    {
+      question: 'Hogyan kérhetek bemutatót?',
+      answer:
+        'Lépj kapcsolatba velünk e-mailben az info@avorasoft.hu címen vagy telefonon a (+36) 20 351 6383 számon. Szívesen bemutatjuk a rendszert!',
+    },
+    {
+      question: 'Milyen támogatást kapok a bevezetés során?',
+      answer:
+        'Teljes körű támogatást biztosítunk a bevezetés során: rendszer beállítás, adatmigráció, oktatás és folyamatos technikai support.',
     },
   ],
 };
@@ -118,7 +108,7 @@ export function FAQSection() {
 
         <div className="bordered-div-padding border-x">
           <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-            FAQs
+            Gyakori kérdések
           </h1>
           <div className="mt-6 block md:hidden">
             <Select

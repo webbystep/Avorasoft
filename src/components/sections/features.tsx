@@ -1,72 +1,70 @@
-import { Images, Layers, ToggleLeft, Users2 } from 'lucide-react';
+import { CalendarDays, ClipboardList, Columns3, Users2 } from 'lucide-react';
 import Image from 'next/image';
 
 import { PlusSigns } from '@/components/icons/plus-signs';
 import { cn } from '@/lib/utils';
 const features = [
   {
-    icon: Layers,
+    icon: ClipboardList,
     title: (
       <>
-        Schema
-        <br />
-        Builder
+        Feladatok
       </>
     ),
-    description: 'Design content structures your way.',
+    description: 'Nincs több elfelejtett feladat.',
     subDescription:
-      'Scalar CMS gives you full control over content with a streamlined, API-first experience — perfect for teams who want speed without sacrificing flexibility.',
+      'A teendők modul az aktuális napi, illetve jövőbeni teendőket jeleníti meg. Munkatársakat jelölhetsz ki, megváltoztathatod a státuszokat és beállíthatod a prioritást.',
     className: '!pb-0',
     images: [
       {
         src: '/images/landing/feature-1.webp',
-        alt: 'Schema Builder',
+        alt: 'Feladatok modul',
         width: 700,
         height: 320,
       },
     ],
   },
   {
-    icon: Users2,
-    title: 'Real Time Collaboration',
-    description: 'Built for content teams.',
+    icon: Columns3,
+    title: 'Munkaterek',
+    description: 'Vizualizáld a folyamatokat.',
     subDescription:
-      'Draft, review, and publish content with confidence. Autosave, rich text editing, role-based permissions, and revision history come standard.',
+      'A KanBan tábla jól nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a folyamatot.',
     className: '!pb-0',
     images: [
       {
         src: '/images/landing/feature-2-1.webp',
-        alt: 'Real Time Collaboration',
+        alt: 'Munkaterek',
         width: 620,
         height: 108,
       },
       {
         src: '/images/landing/feature-2-2.webp',
-        alt: 'Real Time Collaboration',
+        alt: 'Munkaterek',
         width: 620,
         height: 108,
       },
       {
         src: '/images/landing/feature-2-3.webp',
-        alt: 'Real Time Collaboration',
+        alt: 'Munkaterek',
         width: 620,
         height: 108,
       },
     ],
   },
   {
-    icon: Images,
-    title: 'Asset Management',
-    description: 'Organize your media like a pro.',
+    icon: Users2,
+    title: 'Munkatársak',
+    description: 'Kövesd a csapatod teljesítményét.',
     subDescription:
-      'Upload, crop, tag, and reuse images, videos, and docs with our sleek asset manager. Automatically optimizes files and handles CDN delivery.',
+      'Egy helyen kezelheted és láthatod az összes dolgozót. Nyomon követheted, hogy melyik munkatársnak mennyi teendője van és új feladatokat delegálhatsz számukra.',
   },
   {
-    icon: ToggleLeft,
-    title: 'Granular Permissions',
-    description: 'Control who does what.',
+    icon: CalendarDays,
+    title: 'Naptár',
+    description: 'Kövesd nyomon az eseményeket.',
     subDescription:
-      'Create roles for editors, developers, and guests with precision. Lock down fields, models, or even specific actions.',
+      'Egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket, találkozókat és határidőket. Napi, heti vagy havi bontásban, színkódolással.',
   },
 ];
 
@@ -86,7 +84,6 @@ export function Features() {
             )}
           >
             {index === 0 && (
-              // Height is 100% + 2px to account for parent border not being included in the calculation
               <PlusSigns className="absolute inset-0 -mt-0.25 hidden !h-[calc(100%+2px)] -translate-x-full border-y md:block" />
             )}
             <div className="space-y-4 md:space-y-6">

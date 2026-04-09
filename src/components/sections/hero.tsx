@@ -3,7 +3,6 @@
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaDiscord } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/button';
 import { MovingBorder } from '@/components/ui/moving-border';
@@ -33,30 +32,30 @@ export function Hero() {
                 size="sm"
                 className="relative border-none"
               >
-                Public beta is starting next week
+                Kérj ingyenes bemutatót
                 <ArrowRight className="ml-1" />
               </Button>
             </Link>
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-              Fast, flexible, and{' '}
-              <span className="block">developer-first CMS.</span>
+              Egy adatvezérelt CRM,{' '}
+              <span className="block">modern csapatok számára.</span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-              Scalar CMS gives you full control over content with a streamlined,
-              API-first experience—perfect for teams who want speed without
-              sacrificing flexibility.
+              Az Avorasoft CRM egy felhő alapú CRM szoftver. Nem egy dobozos
+              megoldás. A modulokat céged igényei szerint alakítjuk és egyedi
+              modulok fejlesztésével támogatjuk munkafolyamataid
+              leegyszerűsítését.
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             <Button asChild>
-              <Link href="#">Start Free Trial</Link>
+              <Link href="/contact">Bemutató kérése</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="#">
-                <FaDiscord className="size-5" />
-                Community
+              <Link href="/product">
+                Modulok megtekintése
               </Link>
             </Button>
           </div>
@@ -67,23 +66,24 @@ export function Hero() {
             aria-hidden="true"
             role="presentation"
           >
-            <p className="p-4 whitespace-pre opacity-20">{`query MyQuery($slug: String = "") {
-  post(where: { slug: $slug }) {
-    slug
-    title
-    createdAt
-    excerpt
-    content {
-      html
-    }
-    coverImage {
-      altText
-      url
-      width
-      height
-    }
-  }
-}`}</p>
+            <p className="p-4 whitespace-pre opacity-20">{`// Avorasoft CRM API
+const crm = new AvorasoftCRM({
+  apiKey: process.env.AVORA_API_KEY,
+  workspace: "your-workspace",
+});
+
+// Feladatok lekérdezése
+const tasks = await crm.tasks.list({
+  status: "active",
+  assignee: "team-lead",
+  priority: "high",
+});
+
+// Partner létrehozása
+const partner = await crm.partners.create({
+  name: "Példa Kft.",
+  type: "supplier",
+});`}</p>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@ export function Hero() {
         <div className="bordered-div-padding flex items-center justify-center border">
           <Image
             src="/images/landing/hero.webp"
-            alt="Hero Image"
+            alt="Avorasoft CRM"
             width={1320}
             height={743}
             priority

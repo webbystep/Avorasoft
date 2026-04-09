@@ -1,62 +1,70 @@
-import { Mail } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaDiscord, FaGithub, FaXTwitter } from 'react-icons/fa6';
+'use client';
+
+import { Mail, Phone, Send } from 'lucide-react';
+import { useState } from 'react';
 
 import { PlusSigns } from '@/components/icons/plus-signs';
 import { Meteors } from '@/components/magicui/meteors';
-import { EXTERNAL_LINKS } from '@/constants/external-links';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 const contactOptions = [
   {
-    icon: FaDiscord,
-    title: 'Discord',
-    description: 'Ask questions, share ideas, or just hang out.',
-    href: EXTERNAL_LINKS.DISCORD,
-  },
-  {
-    icon: FaGithub,
-    title: 'GitHub',
-    description: "We're always open to PRs and feature requests.",
-    href: EXTERNAL_LINKS.GITHUB,
-  },
-  {
-    icon: FaXTwitter,
-    title: 'Twitter/X',
-    description: 'Keep up with releases and behind-the-scenes moments.',
-    href: EXTERNAL_LINKS.TWITTER,
-  },
-  {
     icon: Mail,
-    title: 'Email us directly',
-    description: 'For enterprise pricing, partnerships, or anything else:',
-    href: EXTERNAL_LINKS.EMAIL,
+    title: 'E-mail',
+    description: 'info@avorasoft.hu',
+    href: 'mailto:info@avorasoft.hu',
+  },
+  {
+    icon: Phone,
+    title: 'Telefon',
+    description: '(+36) 20 351 6383',
+    href: 'tel:+36203516383',
   },
 ];
 
 export function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    message: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Form nem bekötve sehova — csak UI
+    setSubmitted(true);
+  };
+
   return (
     <section className="container">
       <div className="hidden border border-t-0 p-7.5 md:block" />
 
-      <div className="grid grid-cols-1 items-center divide-y border-x md:grid-cols-2 md:divide-x md:divide-y-0">
-        {/* Left Side - Contact Options */}
+      <div className="grid grid-cols-1 items-start divide-y border-x md:grid-cols-2 md:divide-x md:divide-y-0">
+        {/* Left Side - Contact Info */}
         <div className="divide-y">
           <div className="bordered-div-padding relative space-y-6 md:space-y-8 lg:space-y-10">
             <PlusSigns className="absolute inset-0 -mt-0.25 hidden !h-[calc(100%+2px)] -translate-x-full border-y md:block" />
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-              Talk to the Scalar team
+              Készen állsz, hogy szintet lépj?
             </h1>
-            <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-              Whether you&apos;re a solo dev, content team, or curious
-              contributor—our community is your community.
+            <p className="text-muted-foreground max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
+              Vegyél búcsút a kaotikus Excel-tábláktól és az átláthatatlan
+              információáradattól! Az Avorasoft-tal egyszerűen és átláthatóan
+              kezelheted ügyfeleidet, projektjeidet és csapataid munkáját.
+            </p>
+            <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
+              Lépj kapcsolatba velünk még ma, és kérj bemutatót a szoftverről!
             </p>
           </div>
           {contactOptions.map((option, index) => (
-            <Link
+            <a
               key={index}
               href={option.href}
-              target="_blank"
               className="bordered-div-padding hover:bg-muted/30 dark:hover:bg-muted transition-color flex items-center gap-3"
             >
               <option.icon className="size-10 shrink-0 p-2.5" />
@@ -66,24 +74,104 @@ export function ContactSection() {
                   {option.description}
                 </p>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 
-        {/* Right Side - Chat Example */}
-        <div className="bordered-div-padding flex flex-col gap-4 mask-b-from-60% mask-b-to-95%">
-          <Image
-            src="/images/contact/chat-1.webp"
-            alt="Chat example"
-            width={620}
-            height={112}
-          />
-          <Image
-            src="/images/contact/chat-2.webp"
-            alt="Chat example"
-            width={620}
-            height={240}
-          />
+        {/* Right Side - Contact Form */}
+        <div className="bordered-div-padding">
+          {submitted ? (
+            <div className="flex flex-col items-center justify-center gap-4 py-20">
+              <div className="bg-primary/10 text-primary flex size-16 items-center justify-center rounded-full">
+                <Send className="size-7" />
+              </div>
+              <h3 className="font-weight-display text-xl md:text-2xl">
+                Köszönjük!
+              </h3>
+              <p className="text-muted-foreground text-center text-sm md:text-base">
+                Üzeneted megérkezett. Hamarosan felvesszük veled a kapcsolatot!
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <h2 className="font-weight-display text-lg md:text-xl">
+                Kérj bemutatót
+              </h2>
+
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Név *</Label>
+                  <Input
+                    id="name"
+                    required
+                    placeholder="Teljes neved"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">E-mail *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    placeholder="email@ceg.hu"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="company">Cégnév</Label>
+                  <Input
+                    id="company"
+                    placeholder="Céged neve"
+                    value={formData.company}
+                    onChange={(e) =>
+                      setFormData({ ...formData, company: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Telefonszám</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="+36 20 123 4567"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Üzenet *</Label>
+                  <textarea
+                    id="message"
+                    required
+                    placeholder="Írd le, miben segíthetünk..."
+                    rows={4}
+                    className="border-input bg-background placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-1 focus-visible:outline-none"
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+
+              <Button type="submit" className="w-full">
+                Üzenet küldése
+              </Button>
+            </form>
+          )}
         </div>
       </div>
       <div className="relative hidden overflow-hidden border-x border-t p-20 md:block">

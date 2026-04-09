@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import { FAQSection } from '@/components/sections/faq';
 
 export const metadata: Metadata = {
-  title: 'FAQs - Scalar',
-  description: 'Frequently asked questions about Scalar CMS',
+  title: 'Gyakori kérdések - Avorasoft CRM',
+  description: 'Gyakran ismételt kérdések az Avorasoft CRM-ről',
 };
 
 export default function FAQPage() {
