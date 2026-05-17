@@ -72,7 +72,7 @@ export function Hero() {
             className="relative w-full max-w-5xl"
           >
             <Image
-              src="/images/modules/munkaterek.webp"
+              src="/images/hero.webp"
               alt="Avorasoft CRM dashboard"
               width={1320}
               height={743}
