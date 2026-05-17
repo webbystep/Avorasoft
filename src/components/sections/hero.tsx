@@ -13,13 +13,13 @@ export function Hero() {
   return (
     <section className="">
       <div className="container">
-        <div className="bordered-div-padding relative flex flex-col items-center gap-8 border-x text-center md:gap-10 lg:gap-16 lg:!py-25">
+        <div className="bordered-div-padding relative flex flex-col items-center gap-6 border-x text-center md:gap-7 lg:gap-8 lg:!py-25">
           {/* Main Heading */}
           <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
             {/* Beta Banner */}
             <Link
               href="/contact"
-              className="relative inline-flex items-center overflow-hidden rounded-sm p-[1px]"
+              className="relative inline-flex items-center overflow-hidden rounded-sm bg-[#ececec] p-[1px]"
             >
               <MovingBorder duration={4000}>
                 <div
