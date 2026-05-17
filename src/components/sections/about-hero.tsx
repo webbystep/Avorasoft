@@ -9,8 +9,7 @@ export function AboutHero() {
         {/* Main Heading */}
         <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
           <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-            Egy CRM, amit{' '}
-            <span className="block">saját aldomainen használsz.</span>
+            Avorasoft Solutions Kft.
           </h1>
           <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
             Az Avorasoft CRM-et az Avora Solutions Kft. fejleszti és
