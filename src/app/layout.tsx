@@ -1,7 +1,7 @@
 import './globals.css';
 
 import { RootProvider } from 'fumadocs-ui/provider';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 
 import CookieBanner from '@/components/layout/cookie-banner';
@@ -13,6 +13,10 @@ const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
 });
+
+export const viewport: Viewport = {
+  themeColor: '#fcfcfc',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://avorasoft.hu'),

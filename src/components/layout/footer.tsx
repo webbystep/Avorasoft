@@ -10,11 +10,15 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 
 import { Diamonds } from '@/components/icons/diamonds';
 import Logo from '@/components/layout/logo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+
+const PAGE_THEME_COLOR = '#fcfcfc';
+const FOOTER_THEME_COLOR = '#023e34';
 
 const FEATURES = [
   {
@@ -79,16 +83,48 @@ const FEATURES = [
 
 const Footer = () => {
   const pathname = usePathname();
+  const footerRef = useRef<HTMLElement>(null);
 
   const logoWordmarkClass =
     'w-[min(100%,400px)] translate-y-1/4 md:translate-y-1/3 md:h-32 md:w-full lg:h-73 opacity-10 invert';
 
   const hideFooter = ['/docs'].some((route) => pathname.includes(route));
 
+  useEffect(() => {
+    if (hideFooter || !footerRef.current) return;
+
+    let meta = document.querySelector<HTMLMetaElement>(
+      'meta[name="theme-color"]',
+    );
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'theme-color';
+      document.head.appendChild(meta);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        meta!.content = entry.isIntersecting
+          ? FOOTER_THEME_COLOR
+          : PAGE_THEME_COLOR;
+      },
+      { threshold: 0 },
+    );
+    observer.observe(footerRef.current);
+
+    return () => {
+      observer.disconnect();
+      meta!.content = PAGE_THEME_COLOR;
+    };
+  }, [hideFooter]);
+
   if (hideFooter) return null;
 
   return (
-    <footer className="overflow-hidden bg-foreground text-background [&_*]:border-border/30">
+    <footer
+      ref={footerRef}
+      className="overflow-hidden bg-foreground text-background [&_*]:border-border/30"
+    >
       {/* Pricing Section */}
       <div className="container">
         <div className="bordered-div-padding border-x">

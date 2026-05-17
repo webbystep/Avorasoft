@@ -61,7 +61,7 @@ export function ContactSection() {
 
   return (
     <section className="container">
-      <div className="grid grid-cols-1 items-start divide-y border md:grid-cols-2 md:divide-x md:divide-y-0">
+      <div className="grid grid-cols-1 items-start divide-y border-x border-b md:grid-cols-2 md:divide-x md:divide-y-0">
         {/* Left Side - Contact Info */}
         <div className="divide-y">
           <div className="bordered-div-padding space-y-6 md:space-y-8 lg:space-y-10">
