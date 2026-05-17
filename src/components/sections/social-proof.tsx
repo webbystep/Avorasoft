@@ -21,7 +21,7 @@ const testimonials = [
 export function SocialProof() {
   return (
     <section className="container">
-      <div className="grid grid-cols-1 border border-t-0 md:grid-cols-2">
+      <div className="bg-card grid grid-cols-1 border md:grid-cols-2">
         {testimonials.map((t, i) => (
           <figure
             key={t.company}
