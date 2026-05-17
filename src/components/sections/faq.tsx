@@ -3,7 +3,6 @@
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
-import { Meteors } from '@/components/magicui/meteors';
 import {
   Accordion,
   AccordionContent,
@@ -159,16 +158,7 @@ export function FAQSection() {
           </div>
         </div>
 
-        <div className="bordered-div-padding relative hidden border-x md:block">
-          <div className="absolute left-full h-[150%] w-[50vw] -translate-y-[90%] overflow-hidden border-y">
-            <Meteors
-              number={1000}
-              angle={65}
-              maxDuration={20}
-              minDuration={5}
-              className="opacity-10 [&>div]:opacity-10"
-            />
-          </div>
+        <div className="bordered-div-padding hidden border-x md:block">
           <Tabs
             value={activeTab}
             onValueChange={(value) => setActiveTab(value as Category)}

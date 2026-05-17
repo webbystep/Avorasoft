@@ -1,7 +1,6 @@
 import { Home, Mail } from 'lucide-react';
 import Link from 'next/link';
 
-import { Meteors } from '@/components/magicui/meteors';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
@@ -38,15 +37,6 @@ export default function NotFound() {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="relative hidden overflow-hidden border-x border-t p-12 md:block md:p-20">
-        <Meteors
-          number={1000}
-          angle={65}
-          maxDuration={20}
-          minDuration={5}
-          className="opacity-10 [&>div]:opacity-10"
-        />
       </div>
     </section>
   );

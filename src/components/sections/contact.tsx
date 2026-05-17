@@ -3,8 +3,6 @@
 import { Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 
-import { PlusSigns } from '@/components/icons/plus-signs';
-import { Meteors } from '@/components/magicui/meteors';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -63,13 +61,10 @@ export function ContactSection() {
 
   return (
     <section className="container">
-      <div className="hidden border border-t-0 p-7.5 md:block" />
-
-      <div className="grid grid-cols-1 items-start divide-y border-x md:grid-cols-2 md:divide-x md:divide-y-0">
+      <div className="grid grid-cols-1 items-start divide-y border md:grid-cols-2 md:divide-x md:divide-y-0">
         {/* Left Side - Contact Info */}
         <div className="divide-y">
-          <div className="bordered-div-padding relative space-y-6 md:space-y-8 lg:space-y-10">
-            <PlusSigns className="absolute inset-0 -mt-0.25 hidden !h-[calc(100%+2px)] -translate-x-full border-y md:block" />
+          <div className="bordered-div-padding space-y-6 md:space-y-8 lg:space-y-10">
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
               Készen állsz, hogy szintet lépj a vállalkozásodban?
             </h1>
@@ -200,15 +195,6 @@ export function ContactSection() {
             </form>
           )}
         </div>
-      </div>
-      <div className="relative hidden overflow-hidden border-x border-t p-20 md:block">
-        <Meteors
-          number={1000}
-          angle={65}
-          maxDuration={20}
-          minDuration={5}
-          className="opacity-10 [&>div]:opacity-10"
-        />
       </div>
     </section>
   );

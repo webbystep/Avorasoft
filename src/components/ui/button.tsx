@@ -21,10 +21,10 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          'h-10 md:h-12 px-6 md:px-7 py-2 rounded-full gap-3.5 text-sm md:text-base font-weight-display',
+          'h-10 md:h-12 px-6 md:px-7 py-2 rounded-sm gap-3.5 text-sm md:text-base font-weight-display',
         sm: 'h-8 rounded-sm gap-1.5 px-3 has-[>svg]:px-2.5',
-        lg: 'h-12 rounded-md px-8 has-[>svg]:px-6 text-base font-weight-display',
-        icon: 'size-9',
+        lg: 'h-12 rounded-sm px-8 has-[>svg]:px-6 text-base font-weight-display',
+        icon: 'size-9 rounded-sm',
       },
     },
     defaultVariants: {
