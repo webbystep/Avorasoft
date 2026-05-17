@@ -1,4 +1,3 @@
-import { Quote } from 'lucide-react';
 import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
@@ -30,10 +29,6 @@ export function SocialProof() {
               i === 0 && 'border-b md:border-b-0 md:border-e',
             )}
           >
-            <Quote
-              className="text-primary size-7 shrink-0"
-              aria-hidden="true"
-            />
             <blockquote className="font-weight-display text-foreground text-base leading-snug md:text-lg">
               „{t.quote}”
             </blockquote>
