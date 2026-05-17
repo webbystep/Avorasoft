@@ -39,9 +39,9 @@ const FEATURES = [
       },
     ],
     button: {
-      text: 'Kapcsolat',
+      text: 'Bemutató kérése',
       href: '/contact',
-      variant: 'outline' as const,
+      variant: 'default' as const,
     },
   },
   {
