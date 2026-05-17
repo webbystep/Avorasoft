@@ -1,7 +1,6 @@
 import { CalendarDays, Columns3, KanbanSquare, Users2 } from 'lucide-react';
 import Image from 'next/image';
 
-import { PlusSigns } from '@/components/icons/plus-signs';
 import { cn } from '@/lib/utils';
 
 const features = [
@@ -53,9 +52,6 @@ export function Features() {
               index === 3 && 'border-t md:border-s',
             )}
           >
-            {index === 0 && (
-              <PlusSigns className="absolute inset-0 -mt-0.25 hidden !h-[calc(100%+2px)] -translate-x-full border-y md:block" />
-            )}
             <div className="space-y-4 md:space-y-6">
               <div className="space-y-4">
                 <h2 className="text-muted-foreground flex items-center gap-2 text-sm leading-snug font-medium md:text-base">

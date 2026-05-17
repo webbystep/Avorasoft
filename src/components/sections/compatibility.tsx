@@ -1,7 +1,5 @@
 import { BarChart3 } from 'lucide-react';
 
-import { Meteors } from '@/components/magicui/meteors';
-
 export function Compatibility() {
   return (
     <section className="container">
@@ -32,15 +30,6 @@ export function Compatibility() {
             rendszeres, kézzel végzett mikrofeladatok így megszűnnek.
           </p>
         </div>
-      </div>
-      <div className="relative hidden overflow-hidden border-x border-b p-20 md:block" style={{ contain: 'paint' }}>
-        <Meteors
-          number={1000}
-          angle={65}
-          maxDuration={20}
-          minDuration={5}
-          className="opacity-10 [&>div]:opacity-10"
-        />
       </div>
     </section>
   );
