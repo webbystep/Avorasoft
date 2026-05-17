@@ -12,13 +12,15 @@ export function AboutHero() {
         {/* Main Heading */}
         <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
           <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-            Egy modern,{' '}
-            <span className="block">felhasználóbarát CRM...</span>
+            Egy CRM, amit{' '}
+            <span className="block">saját aldomainen használsz.</span>
           </h1>
           <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-            ...amelynek célja, hogy támogassa a vállalkozásokat a mindennapi
-            működésben, az ügyfélkapcsolatok átlátható kezelésében és a belső
-            folyamatok optimalizálásában.
+            Az Avorasoft CRM-et az Avora Solutions Kft. fejleszti és
+            üzemelteti. SaaS modellben működik: minden ügyfelünk saját,
+            elkülönített példányt kap saját aldomain-nel (pl.
+            cegnev.avorasoft.hu), így az adatok teljes mértékben szeparáltak.
+            Böngészőből érhető el, nem igényel telepítést.
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { CalendarDays, ClipboardList, Columns3, Users2 } from 'lucide-react';
+import { CalendarDays, Columns3, KanbanSquare, Users2 } from 'lucide-react';
 import Image from 'next/image';
 
 import { PlusSigns } from '@/components/icons/plus-signs';
@@ -6,36 +6,36 @@ import { cn } from '@/lib/utils';
 
 const features = [
   {
-    icon: ClipboardList,
-    title: 'Feladatok',
-    description: 'Nincs több végre nem hajtott, elfelejtett feladat...',
-    subDescription:
-      'A teendők modul, az aktuális napi, illetve jövőbeni teendőket jeleníti meg a felhasználók részére. Jogosultsági szinttől függően a felhasználók új teendőket adhatnak hozzá, munkatársakat jelölhetnek ki a feladat elvégzésére, valamint megváltoztathatják a feladatok státuszát és beállíthatják a feladat lejáratát. A feladatok megjelölhetőek cimkékkel, melyek a feladatok sürgősségét (prioritását) ábrázolják.',
-    image: '/images/modules/feladatok.webp',
-  },
-  {
     icon: Columns3,
     title: 'Munkaterek',
-    description: 'Mindenki számára vizualizálja a folyamatokat.',
+    description: 'Projektek strukturált, vizuális szervezése.',
     subDescription:
-      'A KanBan tábla jól nyomon követhetővé teszi a gyártást, fejlesztést és a szolgáltatói projekteket. Mérhetővé és szabályozhatóvá teszi a folyamatot. A KanBan azok számára is jó megoldás lehet, akik szeretnék átláthatóbbá tenni a vállalkozáson belüli munkafolyamatokat.',
-    image: '/images/modules/kanban.webp',
+      'A munkaterek a rendszer kiindulópontja: minden projekt egy munkaterületen belül kap helyet, csoportokba szervezett kanban táblákkal. A hierarchia (Munkaterület → Csoport → Tábla → Lista → Kártya) bármilyen szervezeti struktúrát leképez, a hozzáférések pedig öröklődnek a szinteken keresztül.',
+    image: '/images/modules/munkaterek.webp',
   },
   {
-    icon: Users2,
-    title: 'Munkatársak',
-    description: 'Kövesd munkatársaid teljesítményét.',
+    icon: KanbanSquare,
+    title: 'Kanban tábla',
+    description: 'Drag & drop feladatkezelés egyetlen pillantásra.',
     subDescription:
-      'A munkatársak modulban egy helyen kezelheted és láthatod az összes dolgozót. Nyomon követheted, hogy melyik munkatársnak mennyi teendője, illetve feladata van jelenleg és új teendőket, feladatokat delegálhatsz számukra.',
-    image: '/images/modules/ugyfelek.webp',
+      'Minden tábla listákból (oszlopokból) áll, amelyekben a kártyák szabadon mozgathatók — akár listák között is. A kártyákon egy pillantásra látható a feladat neve, felelőse, határideje, címkéi és státusza. Szabad szöveges keresés, címke-, státusz- és felelős-szűrő segíti a navigációt.',
+    image: '/images/modules/kanban.webp',
   },
   {
     icon: CalendarDays,
     title: 'Naptár',
-    description: 'Kövesd nyomon az eseményeket.',
+    description: 'Feladatok és találkozók egyetlen idővonalon.',
     subDescription:
-      'A naptár modul segítségével egyetlen felületen követheted nyomon a vállalkozásodhoz kapcsolódó eseményeket, találkozókat és határidőket. Könnyedén láthatod a napi, heti vagy havi bontású teendőidet, valamint megkülönböztetheted a különféle eseménytípusokat. Az események színkódolással jelennek meg, így gyorsan átláthatóvá válik a programod.',
+      'Havi, heti és napi nézetben mutatja a kanban kártyák határidőit, az alfeladatokat és az ütemezett videó találkozókat (kéken). A naptárból közvetlenül a kártya részleteire navigálhatsz — nincs szükség külön naptáralkalmazásra.',
     image: '/images/modules/naptar.webp',
+  },
+  {
+    icon: Users2,
+    title: 'Ügyfelek',
+    description: 'Cégek és magánszemélyek nyilvántartása.',
+    subDescription:
+      'Két ügyféltípust támogat: cégeknél adószám, EU ÁFA, cégjegyzékszám, bank, számlázási/szállítási cím és kapcsolattartók; személyeknél vezeték- és keresztnév, születési adatok, adóazonosító, címek. Az ügyfelek kanban kártyákkal és email sablon-változókkal is összerendelhetők.',
+    image: '/images/modules/ugyfelek.webp',
   },
 ];
 

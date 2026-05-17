@@ -37,16 +37,15 @@ export function Hero() {
               </Button>
             </Link>
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-              Egy adatvezérelt CRM,{' '}
-              <span className="block">modern csapatok számára.</span>
+              Egy integrált platform{' '}
+              <span className="block">a teljes ügyfélkapcsolat-kezeléshez.</span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-              Az Avorasoft CRM egy magyar fejlesztésű, moduláris vállalati
-              szoftver, amely segít digitalizálni a vállalkozások ügyfélkezelési,
-              projektmenedzsment, dokumentumkezelési, kommunikációs és
-              riportolási folyamatait. A rendszer felhőalapú, böngészőből
-              használható, nem igényel telepítést, és a vállalkozás működéséhez
-              igazítható.
+              Az Avorasoft CRM egy modern, webalapú ügyfélkapcsolat- és
+              projektmenedzsment rendszer. Feladatkezelés, ügyfél-nyilvántartás,
+              dokumentumtárolás, email- és videókommunikáció egyetlen platformon
+              — moduláris felépítéssel, a céged működéséhez igazítva. SaaS
+              modellben, böngészőből, telepítés nélkül.
             </p>
           </div>
 

@@ -1,55 +1,65 @@
-import { Heart, Target } from 'lucide-react';
+import { Layers, ShieldCheck, Target, Users } from 'lucide-react';
+
+const blocks = [
+  {
+    icon: Users,
+    title: 'Kinek ajánljuk?',
+    paragraphs: [
+      'Kis- és középvállalkozásoknak, akik strukturált projektmenedzsmentet és ügyfél-nyilvántartást vezetnének be; szolgáltató cégeknek, ahol az email- és videókommunikációt össze kell hangolni a feladatkövetéssel; projekt-alapú szervezeteknek, ahol vizuális kanban táblák és automatizmusok optimalizálják a munkafolyamatot.',
+      'És minden olyan csapatnak, amelyik több különálló eszközt szeretne lecserélni egyetlen integrált platformra.',
+    ],
+  },
+  {
+    icon: Layers,
+    title: 'Moduláris felépítés',
+    paragraphs: [
+      'Hat alapmodul minden ügyfélnek jár — Munkaterek & Kanban, Naptár, Dokumentumkezelés, Statisztikák, Automatizmusok és Adminisztráció. Az opcionális Ügyfelek, Email kezelés, Videó találkozók és Webformok modulok igény szerint kapcsolhatók be.',
+      'Csak azokért a modulokért fizetsz, amiket ténylegesen használsz.',
+    ],
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Biztonság és technológia',
+    paragraphs: [
+      'A backend Java 17 + Spring Boot 3, a frontend React 18 + TypeScript, az adatbázis PostgreSQL, a fájltárolás AWS S3, a videóhívás LiveKit (WebRTC). HTTPS titkosítás, JWT alapú hitelesítés, többszintű ACL és audit-naplózás minden adatváltozásnál.',
+      'Multi-tenant elválasztás: minden ügyfél saját, izolált adatbázis-példányt kap.',
+    ],
+  },
+  {
+    icon: Target,
+    title: 'Magyar nyelvű támogatás',
+    paragraphs: [
+      'A felület három nyelven érhető el: magyar, angol és spanyol. A támogatás és a dokumentáció magyar nyelvű, a bevezetésnél személyes konzultációval segítünk a folyamatok leképezésében és az egyedi mezők, sablonok, automatizmusok megtervezésében.',
+      'Az ügyfélszolgálat a info@avorasoft.hu címen érhető el.',
+    ],
+  },
+];
 
 export function AboutMissionTeam() {
   return (
     <section className="container">
-      <div className="grid grid-cols-1 divide-y border border-t-0 md:grid-cols-2 md:divide-x md:divide-y-0">
-        {/* Mission Section */}
-        <div className="bordered-div-padding space-y-8">
-          <div className="space-y-4 md:space-y-6">
+      <div className="grid grid-cols-1 border border-t-0 md:grid-cols-2">
+        {blocks.map((block, index) => (
+          <div
+            key={block.title}
+            className={`bordered-div-padding space-y-6 ${
+              index % 2 === 0 ? 'md:border-e' : ''
+            } ${index < 2 ? 'border-b' : ''}`}
+          >
             <h2 className="text-muted-foreground flex items-center gap-2 text-sm leading-snug font-medium md:text-base">
-              <Heart className="size-5" />
-              Küldetésünk
+              <block.icon className="size-5" />
+              {block.title}
             </h2>
-            <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
-              Az Avorasoft célja, hogy minden interakciót lehetőséggé alakítson:
-              támogatja az értékesítési folyamatokat, javítja a csapatok közötti
-              együttműködést és hozzájárul a vállalkozások hosszú távú
-              növekedéséhez.
-            </p>
-            <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
-              A felhőalapú működésnek köszönhetően bárhonnan, bármikor
-              hozzáférhetsz az adatokhoz, így a{' '}
-              <span className="text-foreground font-medium">
-                hatékony munka többé nincs helyhez kötve
-              </span>
-              .
-            </p>
+            {block.paragraphs.map((p, i) => (
+              <p
+                key={i}
+                className="text-muted-foreground text-sm leading-relaxed md:text-base"
+              >
+                {p}
+              </p>
+            ))}
           </div>
-        </div>
-
-        {/* Vision Section */}
-        <div className="bordered-div-padding relative space-y-8">
-          <div className="space-y-4 md:space-y-6">
-            <h2 className="text-muted-foreground flex items-center gap-2 text-sm leading-snug font-medium md:text-base">
-              <Target className="size-5" />
-              Célunk
-            </h2>
-            <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
-              <span className="text-foreground font-medium">
-                Fokozd a csapatod hatékonyságát.
-              </span>{' '}
-              Mi hisszük, hogy a csapatmunkában van az erő és a szoftver minden
-              egyes funkciója ezt támogatja. Emeld új szintre csapatod
-              teljesítményét.
-            </p>
-            <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
-              Az Avorasoft CRM tartalmazza az összes olyan modult, amitől CRM
-              egy CRM és még annál is többet. A modulokat céged igényei szerint
-              alakítjuk — nem fordítva.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
