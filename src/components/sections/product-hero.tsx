@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { BrowserFrame } from '@/components/ui/browser-frame';
 import { Button } from '@/components/ui/button';
 
 export function ProductHero() {
@@ -31,15 +32,24 @@ export function ProductHero() {
           </Button>
         </div>
       </div>
-      <div className="bordered-div-padding flex items-center justify-center border">
-        <Image
-          src="/images/modules/kanban.webp"
-          alt="Avorasoft CRM modulok"
-          width={1320}
-          height={743}
-          priority
-          className="mask-b-from-55% mask-b-to-95%"
+      <div className="bordered-div-padding relative flex items-center justify-center border-x">
+        <div
+          aria-hidden="true"
+          className="bg-primary/20 absolute inset-x-0 top-0 mx-auto h-64 max-w-3xl rounded-full blur-3xl"
         />
+        <BrowserFrame
+          url="cegnev.avorasoft.hu/munkaterek"
+          className="relative w-full max-w-5xl"
+        >
+          <Image
+            src="/images/modules/kanban.webp"
+            alt="Avorasoft CRM modulok"
+            width={1320}
+            height={743}
+            priority
+            className="w-full"
+          />
+        </BrowserFrame>
       </div>
     </section>
   );

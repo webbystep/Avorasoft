@@ -75,7 +75,7 @@ function Navbar() {
           'bg-foreground text-background [&_*]:border-border/30',
       )}
     >
-      <div className="container max-w-[120rem] px-4">
+      <div className="container px-4">
         <div
           className={cn(
             'flex items-center border-x py-4 lg:border-none lg:py-6',
