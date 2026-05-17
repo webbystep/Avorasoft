@@ -139,13 +139,13 @@ export function ProductFeatures() {
               </p>
             </div>
 
-            <div className="mask-b-from-50% mask-b-to-95%">
+            <div className="bg-accent rounded-md p-3 md:p-5">
               <Image
                 src={feature.image}
                 alt={feature.title}
                 width={700}
                 height={400}
-                className="rounded-sm"
+                className="w-full rounded-sm"
               />
             </div>
           </div>

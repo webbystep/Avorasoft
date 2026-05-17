@@ -99,11 +99,11 @@
   --popover-foreground: #023e34;
   --primary: #f14f04;
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.57 0.2328 264.07);
+  --secondary: #023e34;
   --secondary-foreground: oklch(0.99 0 0);
   --muted: oklch(0.9 0 0);
   --muted-foreground: oklch(0.6 0 0);
-  --accent: hsl(0, 0%, 97%);
+  --accent: #f6f6f6;
   --accent-foreground: #023e34;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.89 0 0);

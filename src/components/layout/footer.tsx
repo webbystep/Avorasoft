@@ -41,7 +41,7 @@ const FEATURES = [
     button: {
       text: 'Kapcsolat',
       href: '/contact',
-      className: 'bg-border hover:bg-border/80 text-foreground',
+      variant: 'outline' as const,
     },
   },
   {
@@ -72,6 +72,7 @@ const FEATURES = [
     button: {
       text: 'Bemutató kérése',
       href: '/contact',
+      variant: 'default' as const,
     },
   },
 ];
@@ -135,7 +136,8 @@ const Footer = () => {
 
               <Button
                 asChild
-                className={cn('mt-auto mb-0 w-fit', plan.button.className)}
+                variant={plan.button.variant}
+                className="mt-auto mb-0 w-fit"
               >
                 <Link
                   href={plan.button.href}
