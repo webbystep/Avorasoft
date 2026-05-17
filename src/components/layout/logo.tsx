@@ -45,35 +45,18 @@ export default function Logo({
     );
   }
 
-  if (forceDark !== undefined) {
-    return (
-      <Element href={href} className={cn('flex items-center', className)}>
-        <Image
-          src={forceDark ? '/layout/avorasoft-logo-dark.svg' : '/layout/avorasoft-logo-light.svg'}
-          alt="Avorasoft"
-          width={100}
-          height={40}
-          className="object-contain"
-        />
-      </Element>
-    );
-  }
-
   return (
     <Element href={href} className={cn('flex items-center', className)}>
       <Image
-        src="/layout/avorasoft-logo-light.svg"
+        src={
+          forceDark
+            ? '/layout/avorasoft-logo-dark.svg'
+            : '/layout/avorasoft-logo-light.svg'
+        }
         alt="Avorasoft"
         width={100}
         height={40}
-        className="object-contain dark:hidden"
-      />
-      <Image
-        src="/layout/avorasoft-logo-dark.svg"
-        alt="Avorasoft"
-        width={100}
-        height={40}
-        className="hidden object-contain dark:block"
+        className="object-contain"
       />
     </Element>
   );

@@ -88,7 +88,7 @@ export function ContactSection() {
             <a
               key={index}
               href={option.href}
-              className="bordered-div-padding hover:bg-muted/30 dark:hover:bg-muted transition-color flex items-center gap-3"
+              className="bordered-div-padding hover:bg-muted/30 transition-color flex items-center gap-3"
             >
               <option.icon className="size-10 shrink-0 p-2.5" />
               <div>

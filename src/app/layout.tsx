@@ -8,7 +8,7 @@ import CookieBanner from '@/components/layout/cookie-banner';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { StyleGlideProvider } from '@/components/styleglide-provider';
-import { ThemeProvider } from '@/components/theme-provider';
+
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
@@ -79,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="hu" suppressHydrationWarning>
+    <html lang="hu">
       <head>
         <script
           type="application/ld+json"
@@ -107,25 +107,19 @@ export default function RootLayout({
       <body
         className={`${inter.variable} flex min-h-screen flex-col antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          disableTransitionOnChange
+        <RootProvider
+          search={{
+            options: {
+              type: 'static',
+            },
+          }}
         >
-          <RootProvider
-            search={{
-              options: {
-                type: 'static',
-              },
-            }}
-          >
-            <StyleGlideProvider />
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <CookieBanner />
-          </RootProvider>
-        </ThemeProvider>
+          <StyleGlideProvider />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <CookieBanner />
+        </RootProvider>
       </body>
     </html>
   );

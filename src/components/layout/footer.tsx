@@ -10,8 +10,6 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 
 import { Diamonds } from '@/components/icons/diamonds';
 import Logo from '@/components/layout/logo';
@@ -79,32 +77,17 @@ const FEATURES = [
 ];
 
 const Footer = () => {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
-  // Prevent hydration mismatch by using a consistent theme class until mounted
-  const themeClass =
-    mounted && theme === 'dark'
-      ? 'light bg-foreground text-background [&_*]:border-border/30'
-      : 'dark bg-background text-foreground';
-
-  // Logo should be inverted when footer has light background (dark theme)
-  // and not inverted when footer has dark background (light theme)
-  const logoWordmarkClass = cn(
-    'w-[min(100%,400px)] translate-y-1/4 md:translate-y-1/3 md:h-32 md:w-full lg:h-73 opacity-10',
-    mounted && theme === 'dark' ? 'invert-0' : 'invert',
-  );
+  const logoWordmarkClass =
+    'w-[min(100%,400px)] translate-y-1/4 md:translate-y-1/3 md:h-32 md:w-full lg:h-73 opacity-10 invert';
 
   const hideFooter = ['/docs'].some((route) => pathname.includes(route));
 
   if (hideFooter) return null;
 
   return (
-    <footer className={cn('overflow-hidden', themeClass)}>
+    <footer className="overflow-hidden bg-foreground text-background [&_*]:border-border/30">
       {/* Pricing Section */}
       <div className="container">
         <div className="bordered-div-padding border-x">

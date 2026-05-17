@@ -4,11 +4,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
 import * as React from 'react';
 
 import Logo from '@/components/layout/logo';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
@@ -47,7 +45,6 @@ const navigationItems: NavItem[] = [
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { isAtLeast } = useMediaQuery();
-  const { theme } = useTheme();
   const pathname = usePathname();
   const hideNavbar = ['/docs'].some((route) => pathname.includes(route));
 
@@ -74,11 +71,8 @@ function Navbar() {
     <header
       className={cn(
         'border-b transition-all duration-300',
-        isMenuColorInverted
-          ? theme === 'dark'
-            ? 'light bg-foreground text-background [&_*]:border-border/30'
-            : 'dark bg-background text-foreground'
-          : '',
+        isMenuColorInverted &&
+          'bg-foreground text-background [&_*]:border-border/30',
       )}
     >
       <div className="container max-w-[120rem] px-4">
@@ -89,13 +83,11 @@ function Navbar() {
         >
           <Logo
             className="ps-6 transition-all duration-300 lg:ps-0"
-            forceDark={isMenuColorInverted ? theme !== 'dark' : undefined}
+            forceDark={isMenuColorInverted}
           />
 
           {/* Hamburger Menu Button (Mobile Only) */}
           <div className="me-6 ml-auto flex flex-1 items-center justify-end lg:me-0 lg:hidden">
-            <ThemeToggle className="" />
-
             <Button
               variant="outline"
               size="icon"
@@ -154,11 +146,7 @@ function Navbar() {
                 }}
                 className={cn(
                   'fixed inset-0 top-16 z-50 container flex flex-col overflow-hidden text-sm font-medium lg:hidden',
-                  isMenuColorInverted
-                    ? theme === 'dark'
-                      ? 'light bg-foreground text-background'
-                      : 'dark bg-background text-foreground'
-                    : '',
+                  isMenuColorInverted && 'bg-foreground text-background',
                 )}
               >
                 <motion.div
@@ -216,10 +204,7 @@ const NavBarAction = ({
 }) => {
   return (
     <div className="bordered-div-padding flex items-center justify-between border lg:border-none lg:!p-0">
-      <div className="flex flex-1 items-center gap-2">
-        <div className="flex flex-1 items-center justify-center">
-          <ThemeToggle className="hidden lg:block" />
-        </div>
+      <div className="flex flex-1 items-center justify-end gap-2">
         <Link
           href="/contact"
           className="ms-3"
