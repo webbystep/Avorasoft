@@ -23,7 +23,7 @@ export function Hero() {
               <MovingBorder duration={4000}>
                 <div
                   className={cn(
-                    'h-18 w-25 bg-[radial-gradient(#00A656_40%,transparent_60%)] opacity-[0.8]',
+                    'h-18 w-25 bg-[radial-gradient(#F14F04_40%,transparent_60%)] opacity-[0.8]',
                   )}
                 />
               </MovingBorder>
