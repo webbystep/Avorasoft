@@ -38,8 +38,8 @@ export function Hero() {
               </Button>
             </Link>
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-              Egy integrált platform{' '}
-              <span className="block">a teljes ügyfélkapcsolat-kezeléshez.</span>
+              Egy Adatvezérelt CRM,{' '}
+              <span className="block">modern csapatok számára.</span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
               Az Avorasoft CRM egy modern, webalapú ügyfélkapcsolat- és
